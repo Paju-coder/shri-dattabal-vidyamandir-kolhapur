@@ -24,7 +24,7 @@ export default function WhyChooseUs() {
                 Private Aided Institution • Kolhapur
               </span>
               <p className="text-xs text-slate-300">
-                19 Instructional Classrooms • 1,373-Book Library • 5 Computers • 22 Modern Toilets • Full Electricity & Purified Tap Water.
+                19 Instructional Classrooms • 65 Teaching & 15 Non-Teaching Staff • 5 Computers • 22 Modern Toilets • Full Electricity & Purified Tap Water.
               </p>
             </div>
           </div>

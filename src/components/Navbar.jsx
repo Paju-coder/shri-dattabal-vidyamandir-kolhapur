@@ -191,7 +191,7 @@ export default function Navbar({ activePage, setActivePage }) {
               <div className="pt-2 text-xs text-slate-400 space-y-2">
                 <div className="flex items-center gap-2">
                   <MapPin className="w-3.5 h-3.5 text-amber-400 shrink-0" />
-                  <span>Kolhapur Block, Kolhapur District, Maharashtra</span>
+                  <span>New Palace, Kasaba Bawada, Kolhapur</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Mail className="w-3.5 h-3.5 text-amber-400 shrink-0" />

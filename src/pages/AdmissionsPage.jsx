@@ -16,7 +16,7 @@ export default function AdmissionsPage({ setActivePage }) {
             Admissions & Enrollment
           </h1>
           <p className="text-blue-100 max-w-2xl text-sm sm:text-base">
-            Applications now open across our <strong>English Medium</strong> (Nursery – 10th) and <strong>Semi-English Medium</strong> (Nursery – 10th) wings for the upcoming academic session starting in April.
+            Applications now open across our <strong>English Medium</strong> (Nursery – 10th) and <strong>Semi-English Medium</strong> (Nursery – 10th) streams for the upcoming academic session starting in April.
           </p>
         </div>
       </div>

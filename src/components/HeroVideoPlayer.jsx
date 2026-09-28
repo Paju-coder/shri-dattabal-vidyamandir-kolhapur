@@ -1,139 +1,177 @@
-import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
-import { VolumeX, Sparkles } from 'lucide-react';
+import React, { useRef, useState, useEffect, useCallback } from 'react';
+import { motion } from 'motion/react';
+import { Volume2, VolumeX, Sparkles, ChevronLeft, ChevronRight, Play, Pause } from 'lucide-react';
+
+// ─── All videos from public/videos ─────────────────────────────────────────
+const VIDEO_PLAYLIST = [
+  {
+    src: '/videos/VID_20260915_071622_881_bsl.mp4',
+    label: 'Campus Life · September 2026',
+    sub: 'Shri Dattabal Vidyamandir, Kolhapur',
+  },
+  // Add more videos here as they become available in public/videos:
+  // { src: '/videos/VID_20260910_073358_262_bsl.mp4', label: 'School Events · 2026', sub: 'Annual Gathering' },
+];
 
 export default function HeroVideoPlayer({ onOpenGallery }) {
-  const [currentScene, setCurrentScene] = useState(0);
+  const videoRef = useRef(null);
+  const [muted, setMuted] = useState(true);
+  const [playing, setPlaying] = useState(true);
+  const [progress, setProgress] = useState(0);
+  const [currentIdx, setCurrentIdx] = useState(0);
 
-  // Scenes capturing campus environment, trees, classrooms, and school life
-  const scenes = [
-    {
-      title: "Main Campus Entrance & Tree-lined Pathway",
-      sub: "Shri Dattabal Vidyamandir",
-      image: "/images/hero_campus.jpg",
-      pan: { scale: [1, 1.12], x: [0, -10], y: [0, -8] }
-    },
-    {
-      title: "19 Classrooms & Daily Learning",
-      sub: "Active Primary Education",
-      image: "/images/classroom.jpg",
-      pan: { scale: [1.08, 1.2], x: [8, -8], y: [-4, 4] }
-    },
-    {
-      title: "School Library (1,373+ Books)",
-      sub: "Saraswati Library & Reading Center",
-      image: "/images/library.jpg",
-      pan: { scale: [1, 1.15], x: [-8, 8], y: [0, -10] }
-    },
-    {
-      title: "Sports Playground & Lezim Drills",
-      sub: "Athletics & Physical Training",
-      image: "/images/sports_ground.jpg",
-      pan: { scale: [1.1, 1], x: [0, 10], y: [-8, 0] }
-    },
-    {
-      title: "Annual Gathering & Cultural Celebrations",
-      sub: "Student Arts & Heritage",
-      image: "/images/cultural_gathering.jpg",
-      pan: { scale: [1, 1.16], x: [10, -10], y: [4, -4] }
-    }
-  ];
+  const currentVideo = VIDEO_PLAYLIST[currentIdx];
 
+  // Switch video
+  const switchTo = useCallback((idx) => {
+    const next = (idx + VIDEO_PLAYLIST.length) % VIDEO_PLAYLIST.length;
+    setCurrentIdx(next);
+    setProgress(0);
+    setPlaying(true);
+  }, []);
 
-  // Continuous auto-rotation every 3.8 seconds
+  // When currentIdx changes, reload & play the new video
   useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentScene((prev) => (prev + 1) % scenes.length);
-    }, 3800);
-    return () => clearInterval(timer);
-  }, [scenes.length]);
+    const video = videoRef.current;
+    if (!video) return;
+    video.load();
+    video.muted = muted;
+    video.play().catch(() => {});
+  }, [currentIdx]);
 
-  const activeScene = scenes[currentScene];
+  // Auto-advance to next video when current one ends
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+    const onEnded = () => switchTo(currentIdx + 1);
+    video.addEventListener('ended', onEnded);
+    return () => video.removeEventListener('ended', onEnded);
+  }, [currentIdx, switchTo]);
+
+  // Progress bar tracking
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+    const onTimeUpdate = () => {
+      setProgress(video.duration ? (video.currentTime / video.duration) * 100 : 0);
+    };
+    video.addEventListener('timeupdate', onTimeUpdate);
+    return () => video.removeEventListener('timeupdate', onTimeUpdate);
+  }, []);
+
+  const toggleMute = () => {
+    if (videoRef.current) videoRef.current.muted = !muted;
+    setMuted((m) => !m);
+  };
+
+  const togglePlay = () => {
+    if (!videoRef.current) return;
+    if (playing) { videoRef.current.pause(); }
+    else { videoRef.current.play(); }
+    setPlaying((p) => !p);
+  };
 
   return (
-    <div className="relative w-full max-w-[320px] xs:max-w-[350px] sm:max-w-[370px] rounded-3xl overflow-hidden shadow-2xl border-4 border-amber-400/50 bg-slate-950 flex flex-col group mx-auto">
-      {/* Top Floating Status Pill */}
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: 'easeOut' }}
+      className="relative w-full max-w-[320px] xs:max-w-[350px] sm:max-w-[370px] rounded-3xl overflow-hidden shadow-2xl border-4 border-amber-400/50 bg-slate-950 flex flex-col group mx-auto"
+    >
+      {/* ── TOP STATUS BAR ── */}
       <div className="absolute top-3 sm:top-4 left-3 sm:left-4 right-3 sm:right-4 z-20 flex items-center justify-between pointer-events-none">
-        <div className="flex items-center gap-1.5 px-2.5 sm:px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/20 text-white text-[10px] sm:text-[11px] font-bold shadow-lg">
-          <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
-          <span>Continuous Campus Video</span>
+        <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/20 text-white text-[10px] sm:text-[11px] font-bold shadow-lg">
+          <span className="w-2 h-2 rounded-full bg-red-500 animate-ping" />
+          <span>Campus Reel</span>
         </div>
-
-        <div className="flex items-center gap-1 px-2 sm:px-2.5 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/20 text-slate-300 text-[9px] sm:text-[10px] font-bold">
-          <VolumeX className="w-3 h-3 text-slate-400" />
-          <span>Muted</span>
+        <div className="flex items-center gap-1.5 px-2 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/20 text-slate-300 text-[9px] sm:text-[10px] font-bold">
+          {currentIdx + 1} / {VIDEO_PLAYLIST.length}
         </div>
       </div>
 
-      {/* Main Video Viewport - Zero white frames, zero play button, 100% pure continuous motion */}
-      <div className="relative w-full aspect-[9/16] max-h-[460px] sm:max-h-[520px] bg-black overflow-hidden flex items-center justify-center">
-        <AnimatePresence mode="popLayout">
-          <motion.div
-            key={currentScene}
-            initial={{ opacity: 0, scale: 1.15 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.95 }}
-            transition={{ duration: 1.2, ease: "easeInOut" }}
-            className="absolute inset-0 w-full h-full"
-          >
-            <motion.img
-              src={activeScene.image}
-              alt={activeScene.title}
-              animate={{
-                scale: activeScene.pan.scale,
-                x: activeScene.pan.x,
-                y: activeScene.pan.y,
-              }}
-              transition={{
-                duration: 4,
-                ease: "linear",
-              }}
-              className="w-full h-full object-cover"
-            />
-            {/* Cinematic subtle gradient overlays */}
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-transparent to-slate-950/40" />
-            <div className="absolute inset-0 bg-gradient-to-r from-slate-950/30 via-transparent to-slate-950/30" />
-          </motion.div>
-        </AnimatePresence>
+      {/* ── VIDEO VIEWPORT ── */}
+      <div className="relative w-full aspect-[9/16] max-h-[500px] sm:max-h-[560px] bg-black overflow-hidden">
+        <video
+          ref={videoRef}
+          src={currentVideo.src}
+          autoPlay
+          loop={VIDEO_PLAYLIST.length === 1}
+          muted={muted}
+          playsInline
+          preload="metadata"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
 
-        {/* Scene progress bars at top */}
-        <div className="absolute top-10 sm:top-12 left-3 sm:left-4 right-3 sm:right-4 z-20 flex gap-1 sm:gap-1.5">
-          {scenes.map((_, idx) => (
-            <div
-              key={idx}
-              className="h-1 flex-1 bg-white/25 rounded-full overflow-hidden backdrop-blur-sm"
-            >
-              {currentScene === idx && (
-                <motion.div
-                  initial={{ width: "0%" }}
-                  animate={{ width: "100%" }}
-                  transition={{ duration: 3.8, ease: "linear" }}
-                  className="h-full bg-amber-400"
-                />
-              )}
-              {idx < currentScene && <div className="h-full w-full bg-amber-400" />}
-            </div>
-          ))}
+        {/* Cinematic vignette */}
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-slate-950/30 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-950/20 via-transparent to-slate-950/20 pointer-events-none" />
+
+        {/* ── Progress bar ── */}
+        <div className="absolute top-12 sm:top-14 left-3 sm:left-4 right-3 sm:right-4 z-20 h-1 bg-white/25 rounded-full overflow-hidden">
+          <div
+            className="h-full bg-amber-400 rounded-full transition-all duration-500"
+            style={{ width: `${progress}%` }}
+          />
         </div>
 
-        {/* Bottom scene caption inside viewport */}
-        <div className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 right-3 sm:right-4 z-20 space-y-1">
+        {/* ── Tap to play/pause ── */}
+        <button
+          onClick={togglePlay}
+          className="absolute inset-0 w-full h-full z-10 flex items-center justify-center group/play cursor-pointer"
+          aria-label={playing ? 'Pause' : 'Play'}
+        >
+          <div className={`w-14 h-14 rounded-full bg-black/50 backdrop-blur-sm border border-white/30 flex items-center justify-center transition-all duration-300 ${playing ? 'opacity-0 group-hover/play:opacity-100 scale-90 group-hover/play:scale-100' : 'opacity-100 scale-100'}`}>
+            {playing
+              ? <Pause className="w-6 h-6 text-white" />
+              : <Play className="w-6 h-6 text-white ml-1" />
+            }
+          </div>
+        </button>
+
+        {/* ── Prev / Next arrows (only if multiple videos) ── */}
+        {VIDEO_PLAYLIST.length > 1 && (
+          <>
+            <button
+              onClick={(e) => { e.stopPropagation(); switchTo(currentIdx - 1); }}
+              className="absolute left-2 top-1/2 -translate-y-1/2 z-20 w-8 h-8 rounded-full bg-black/50 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white hover:bg-amber-500/80 transition-all"
+            >
+              <ChevronLeft className="w-4 h-4" />
+            </button>
+            <button
+              onClick={(e) => { e.stopPropagation(); switchTo(currentIdx + 1); }}
+              className="absolute right-2 top-1/2 -translate-y-1/2 z-20 w-8 h-8 rounded-full bg-black/50 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white hover:bg-amber-500/80 transition-all"
+            >
+              <ChevronRight className="w-4 h-4" />
+            </button>
+          </>
+        )}
+
+        {/* ── Bottom caption ── */}
+        <div className="absolute bottom-4 left-4 right-4 z-20 space-y-0.5 pointer-events-none">
           <span className="text-[9px] sm:text-[10px] font-bold uppercase tracking-wider text-amber-300 flex items-center gap-1 drop-shadow">
             <Sparkles className="w-3 h-3 text-amber-400" />
-            {activeScene.sub}
+            {currentVideo.sub}
           </span>
-          <h4 className="font-serif font-bold text-xs sm:text-sm md:text-base text-white leading-snug drop-shadow-md line-clamp-1">
-            {activeScene.title}
+          <h4 className="font-serif font-bold text-xs sm:text-sm text-white leading-snug drop-shadow-md">
+            {currentVideo.label}
           </h4>
         </div>
       </div>
 
-      {/* Bottom Info & Action Bar */}
-      <div className="p-3 sm:p-3.5 bg-slate-950 border-t border-slate-800 flex items-center justify-between text-xs relative z-10">
-        <div className="text-slate-400 text-[10px] sm:text-[11px] flex items-center gap-1.5">
-          <span className="w-2 h-2 rounded-full bg-pink-500 animate-ping" />
-          <span>7 Official Videos</span>
-        </div>
+      {/* ── BOTTOM CONTROLS BAR ── */}
+      <div className="p-3 sm:p-3.5 bg-slate-950 border-t border-slate-800 flex items-center justify-between relative z-10">
+        <button
+          onClick={toggleMute}
+          className="flex items-center gap-1.5 text-slate-400 hover:text-amber-400 transition-colors text-[10px] sm:text-[11px] font-semibold cursor-pointer"
+          aria-label={muted ? 'Unmute' : 'Mute'}
+        >
+          {muted
+            ? <VolumeX className="w-4 h-4" />
+            : <Volume2 className="w-4 h-4 text-amber-400" />
+          }
+          <span>{muted ? 'Tap to Unmute' : 'Sound On'}</span>
+        </button>
+
         <button
           onClick={onOpenGallery}
           className="text-amber-400 hover:text-amber-300 font-bold text-xs flex items-center gap-1 cursor-pointer transition-colors"
@@ -142,7 +180,6 @@ export default function HeroVideoPlayer({ onOpenGallery }) {
           <span className="text-sm font-black">→</span>
         </button>
       </div>
-    </div>
+    </motion.div>
   );
 }
-

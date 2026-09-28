@@ -101,11 +101,11 @@ export default function Footer({ setActivePage }) {
             </li>
             <li className="flex items-start gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-amber-400 mt-1.5 shrink-0" />
-              <span>Wings: 100% English & Semi-English Medium</span>
+              <span>Medium: 100% English & Semi-English</span>
             </li>
             <li className="flex items-start gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-amber-400 mt-1.5 shrink-0" />
-              <span>19 Classrooms, 22 Toilets, 1,373-Book Library</span>
+              <span>19 Classrooms, 22 Toilets, 65 Teaching & 15 Non-Teaching Staff</span>
             </li>
             <li className="flex items-start gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-amber-400 mt-1.5 shrink-0" />

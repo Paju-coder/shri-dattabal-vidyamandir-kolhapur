@@ -17,7 +17,7 @@ export default function FacultySection({ setActivePage }) {
             Dedicated Educators Inspiring Young Minds
           </h2>
           <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
-            Led by Head Teacher <strong>SAWANT JAYSHREE TANAJI</strong>, our 14 qualified educators bring decades of pedagogical experience, character building, and state board excellence to English and Semi-English wings.
+            Led by Head Teacher <strong>SAWANT JAYSHREE TANAJI</strong>, our team of 65 dedicated teaching staff and 15 non-teaching support staff bring decades of pedagogical experience, character building, and state board excellence to English and Semi-English mediums.
           </p>
         </div>
 
@@ -57,22 +57,22 @@ export default function FacultySection({ setActivePage }) {
                   A High-Trust, Caring Academic Culture
                 </h3>
                 <p className="text-sm text-slate-600 leading-relaxed mt-2">
-                  At Shri Dattabal Vidyamandir, education goes beyond rote learning. Our teachers mentor children through personalized guidance, regular reading sessions in the 1,373-book library, and science practicals.
+                  At Shri Dattabal Vidyamandir, education goes beyond rote learning. Our 65 teaching staff and 15 non-teaching staff mentor children through personalized guidance, interactive learning, and science practicals.
                 </p>
               </div>
 
               {/* 4 Key Pillars Stats */}
               <div className="grid grid-cols-2 gap-4 pt-2 border-t border-slate-100">
                 <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200/80">
-                  <div className="text-2xl font-extrabold text-[#04439c]">14</div>
-                  <div className="text-xs font-semibold text-slate-700 mt-0.5">Total Educators</div>
-                  <div className="text-[11px] text-slate-500">8 Primary/Upper + 5 Pre-Primary</div>
+                  <div className="text-2xl font-extrabold text-[#04439c]">65</div>
+                  <div className="text-xs font-semibold text-slate-700 mt-0.5">Teaching Staff</div>
+                  <div className="text-[11px] text-slate-500">Qualified Educators</div>
                 </div>
 
                 <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200/80">
-                  <div className="text-2xl font-extrabold text-amber-600">1:25</div>
-                  <div className="text-xs font-semibold text-slate-700 mt-0.5">Mentorship Ratio</div>
-                  <div className="text-[11px] text-slate-500">Personalized attention</div>
+                  <div className="text-2xl font-extrabold text-amber-600">15</div>
+                  <div className="text-xs font-semibold text-slate-700 mt-0.5">Non-Teaching Staff</div>
+                  <div className="text-[11px] text-slate-500">Admin & Campus Support</div>
                 </div>
 
                 <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200/80">

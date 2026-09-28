@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { schoolDetails } from '../data/schoolData';
-import { MapPin, Phone, Mail, Clock, Send, CheckCircle2, AlertCircle } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, Send, CheckCircle2, AlertCircle, ExternalLink } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
 export default function ContactSection() {
@@ -8,7 +8,7 @@ export default function ContactSection() {
     name: '',
     email: '',
     phone: '',
-    gradeLevel: 'Pre-Primary (Nursery / Kindergarten)',
+    gradeLevel: 'English Medium',
     message: ''
   });
 
@@ -70,7 +70,7 @@ export default function ContactSection() {
                 <div>
                   <strong className="block text-slate-900 font-bold text-xs uppercase">School Location & Address</strong>
                   <span className="text-xs text-slate-600 leading-snug block">{schoolDetails.address}</span>
-                  <span className="block text-[11px] text-amber-700 font-semibold mt-0.5">Kolhapur Block, Kolhapur District, Maharashtra (Approachable by all-weather road)</span>
+                  <span className="block text-[11px] text-amber-700 font-semibold mt-0.5">Near New Palace, Kasaba Bawada Main Road, Kolhapur (Approachable by all-weather road)</span>
                 </div>
               </div>
 
@@ -111,16 +111,27 @@ export default function ContactSection() {
             </div>
 
             {/* Map Preview for Kolhapur */}
-            <div className="pt-2 rounded-2xl overflow-hidden border border-slate-200">
-              <iframe
-                title="Shri Dattabal Vidyamandir Kolhapur Map"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d122283.74867499645!2d74.168822!3d16.704987!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc1000cdec07a29%3A0xece8dda643653139!2sKolhapur%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1700000000000"
-                width="100%"
-                height="190"
-                style={{ border: 0 }}
-                allowFullScreen=""
-                loading="lazy"
-              />
+            <div className="pt-2 space-y-2">
+              <div className="rounded-2xl overflow-hidden border border-slate-200 shadow-inner">
+                <iframe
+                  title="Shri Dattabal Vidyamandir Kolhapur Map"
+                  src={schoolDetails.mapEmbedUrl}
+                  width="100%"
+                  height="190"
+                  style={{ border: 0 }}
+                  allowFullScreen=""
+                  loading="lazy"
+                />
+              </div>
+              <a
+                href={schoolDetails.mapQueryUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center justify-center gap-1.5 w-full py-2 px-3 text-xs font-semibold text-[#04439c] bg-blue-50 hover:bg-blue-100 border border-blue-200 rounded-xl transition-colors"
+              >
+                <span>View on Google Maps & Get Directions</span>
+                <ExternalLink className="w-3.5 h-3.5" />
+              </a>
             </div>
           </div>
 
@@ -143,7 +154,7 @@ export default function ContactSection() {
                   <button
                     onClick={() => {
                       setSubmitted(false);
-                      setFormData({ name: '', email: '', phone: '', gradeLevel: 'Pre-Primary (Nursery / Kindergarten)', message: '' });
+                      setFormData({ name: '', email: '', phone: '', gradeLevel: 'English Medium', message: '' });
                     }}
                     className="px-6 py-2.5 rounded-full bg-[#04439c] text-white text-xs font-bold uppercase tracking-wider cursor-pointer active:scale-95"
                   >
@@ -202,16 +213,14 @@ export default function ContactSection() {
                     </div>
 
                     <div>
-                      <label className="block text-xs font-bold text-slate-800 uppercase mb-1">Grade of Interest</label>
+                      <label className="block text-xs font-bold text-slate-800 uppercase mb-1">Medium of Interest</label>
                       <select
                         value={formData.gradeLevel}
                         onChange={(e) => setFormData({ ...formData, gradeLevel: e.target.value })}
-                        className="w-full px-3.5 py-2.5 sm:px-4 sm:py-3 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-[#04439c] bg-white cursor-pointer"
+                        className="w-full px-3.5 py-2.5 sm:px-4 sm:py-3 rounded-xl border border-slate-300 text-sm focus:outline-none focus:border-[#04439c] bg-white cursor-pointer font-medium text-slate-800"
                       >
-                        <option>Pre-Primary (Nursery / Kindergarten)</option>
-                        <option>Primary - Grade 1</option>
-                        <option>Primary - Grades 2 to 4</option>
-                        <option>Upper Primary - Grades 5 to 7</option>
+                        <option value="English Medium">English Medium</option>
+                        <option value="Semi-English Medium">Semi-English Medium</option>
                       </select>
                     </div>
                   </div>

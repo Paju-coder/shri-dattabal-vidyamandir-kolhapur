@@ -14,7 +14,7 @@ export default function FacilitiesPage({ setActivePage }) {
             Campus Facilities & Infrastructure
           </h1>
           <p className="text-blue-100 max-w-2xl text-sm sm:text-base">
-            19 instructional classrooms in prime condition, 1,373-book library, 5-computer digital lab, 22 clean toilets, safe Pucca wall, and spacious sports ground in Kolhapur.
+            19 instructional classrooms in prime condition, 65 teaching staff, 15 non-teaching staff, 5-computer digital lab, 22 clean toilets, safe Pucca wall, and spacious sports ground in Kolhapur.
           </p>
         </div>
       </div>

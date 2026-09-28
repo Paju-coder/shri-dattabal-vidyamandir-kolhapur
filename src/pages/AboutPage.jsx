@@ -1,8 +1,6 @@
 import React from 'react';
 import AboutSection from '../sections/AboutSection';
 import PrincipalSection from '../sections/PrincipalSection';
-import HighlightsSection from '../sections/HighlightsSection';
-import WhyChooseUs from '../sections/WhyChooseUs';
 
 export default function AboutPage({ setActivePage }) {
   return (
@@ -18,15 +16,13 @@ export default function AboutPage({ setActivePage }) {
             About Shri Dattabal Vidyamandir
           </h1>
           <p className="text-blue-100 max-w-2xl text-sm sm:text-base">
-            Managed by Private Aided Trust, providing rich educational foundation, 19 modern classrooms, 1,373-book library, sports playground, and values in Kolhapur, Maharashtra.
+            Managed by Private Aided Trust, providing rich educational foundation, 19 modern classrooms, 65 teaching staff, 15 non-teaching staff, sports playground, and values in Kolhapur, Maharashtra.
           </p>
         </div>
       </div>
 
       <AboutSection setActivePage={setActivePage} />
       <PrincipalSection />
-      <HighlightsSection />
-      <WhyChooseUs />
     </div>
   );
 }

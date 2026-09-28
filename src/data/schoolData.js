@@ -6,12 +6,15 @@ export const schoolDetails = {
   management: "Private Aided",
   schoolType: "Co-educational",
   medium: "English Medium & Semi-English Medium",
-  wings: ["English Medium (Nursery - 10th)", "Semi-English Medium (Nursery - 10th)"],
+  mediums: ["English Medium (Nursery - 10th)", "Semi-English Medium (Nursery - 10th)"],
   grades: "Nursery to Grade 10",
   academicSession: "Starts in April",
   headTeacher: "SAWANT JAYSHREE TANAJI",
-  address: "Shri Dattabal Vidyamandir, Urban Area, Kolhapur Block, Kolhapur District, Maharashtra - 416012",
-  addressShort: "Kolhapur, Maharashtra",
+  address: "1A/4B, Bawada Rd, New Palace, Kasaba Bawada Main Rd, New Palace, Kolhapur, Maharashtra - 416003",
+  addressShort: "New Palace, Kasaba Bawada, Kolhapur",
+  pincode: "416003",
+  mapQueryUrl: "https://www.google.com/maps/search/?api=1&query=1A%2F4B%2C+Bawada+Rd+New+Palace%2C+Kasaba+Bawada+Main+Rd%2C+New+Palace%2C+Kolhapur%2C+Maharashtra+416003",
+  mapEmbedUrl: "https://maps.google.com/maps?q=1A%2F4B%2C+Bawada+Rd+New+Palace%2C+Kasaba+Bawada+Main+Rd%2C+New+Palace%2C+Kolhapur%2C+Maharashtra+416003&t=&z=16&ie=UTF8&iwloc=&output=embed",
   phone: "+91 231 265 4890 / +91 98220 12345",
   email: "dattabalvidyamandir.kop@gmail.com",
   schoolHoursNursery: "10:00 AM – 1:30 PM (Mon–Sat)",
@@ -29,7 +32,7 @@ export const schoolDetails = {
 export const mediumStreams = [
   {
     id: "english",
-    title: "English Medium Wing",
+    title: "English Medium",
     subtitle: "Complete English Immersion & Modern Pedagogy",
     grades: "Nursery to Grade 10",
     timing: "10:00 AM – 4:00 PM",
@@ -55,37 +58,37 @@ export const mediumStreams = [
       { subject: "Marathi & Hindi Languages", medium: "Marathi & Hindi", status: "Second & Third Language" },
       { subject: "Computer Science & ICT", medium: "English", status: "Digital Literacy" }
     ],
-    idealFor: "Students seeking holistic English fluency for future careers in engineering, medical, computer science, and international academia."
+    idealFor: "Students seeking comprehensive English fluency, strong conceptual fundamentals, and well-rounded academic growth."
   },
   {
     id: "semi-english",
-    title: "Semi-English Medium Wing",
-    subtitle: "Bilingual Technical Edge & State Board Mastery",
-    grades: "Nursery to Grade 10",
-    timing: "11:00 AM – 5:00 PM",
-    nurseryTiming: "10:00 AM – 1:30 PM",
-    badge: "Science & Math in English",
+    title: "सेमी-इंग्लिश माध्यम",
+    subtitle: "मजबूत पायाभरणी आणि महाराष्ट्र राज्य मंडळाचा दर्जेदार अभ्यासक्रम",
+    grades: "नर्सरी ते इयत्ता १० वी",
+    timing: "सकाळी ११:०० ते सायंकाळी ५:००",
+    nurseryTiming: "सकाळी १०:०० ते दुपारी १:३०",
+    badge: "विज्ञान आणि गणित इंग्रजीतून",
     accentColor: "#0d9488",
     tagColor: "bg-emerald-600 text-white",
     description:
-      "The premier bilingual model recognized by the Maharashtra State Education Department. Science and Mathematics are taught in English to build essential technical and STEM terminology, while Social Sciences and Humanities are taught in Marathi for natural, deep conceptual comprehension.",
+      "महाराष्ट्र राज्य शिक्षण मंडळाच्या अभ्यासक्रमानुसार दर्जेदार द्विभाषिक शिक्षण. गणित आणि विज्ञान हे विषय इंग्रजीतून शिकवून विद्यार्थ्यांचा पाया पक्का केला जातो, तर समाजशास्त्रे मातृभाषेतून शिकवल्यामुळे संकल्पना समजणे सहज व सोपे होते.",
     highlights: [
-      "School Hours: 11:00 AM – 5:00 PM (Nursery / Pre-Primary: 10:00 AM – 1:30 PM)",
-      "Mathematics & Science taught in English for high school & college technical readiness",
-      "Social Sciences (History & Geography) taught in Marathi for superior retention and clarity",
-      "Zero linguistic strain—smooth transition for students from regional language backgrounds",
-      "Consistently high pass percentages and board merit achievements in Maharashtra SSC Exams",
-      "Balanced moral, cultural, and scientific education rooted in traditional values"
+      "शाळेची वेळ: सकाळी ११:०० ते सायंकाळी ५:०० (नर्सरी / पूर्व-प्राथमिक: सकाळी १०:०० ते दुपारी १:३०)",
+      "गणित आणि विज्ञान विषयांचा इंग्रजीतून सराव व भक्कम पायाभरणी",
+      "इतिहास, भूगोल आणि नागरिकशास्त्र मराठीतून — संकल्पना समजण्यास सुलभ",
+      "मातृभाषेतून शिकत असतानाच इंग्रजी भाषेची भीती नाहीशी होऊन आत्मविश्वास वाढतो",
+      "इयत्ता १० वी (SSC) बोर्ड परीक्षेत उत्तम गुण मिळवण्यासाठी विशेष मार्गदर्शन",
+      "अभ्यासासोबतच खेळ, कला आणि उत्तम संस्कारांवर विशेष भर"
     ],
     subjectBreakdown: [
-      { subject: "Mathematics (Algebra & Geometry)", medium: "English", status: "Primary (English)" },
-      { subject: "General Science (Physics, Chem, Bio)", medium: "English", status: "Primary (English)" },
-      { subject: "Social Sciences (History, Geography, Civics)", medium: "Marathi", status: "Concept-First (Marathi)" },
-      { subject: "English Language", medium: "English", status: "Standard / Higher Level" },
-      { subject: "Marathi & Hindi Languages", medium: "Marathi & Hindi", status: "First & Third Language" },
-      { subject: "Computer Science & ICT", medium: "English / Bilingual", status: "Digital Literacy" }
+      { subject: "गणित (बीजगणित व भूमिती)", medium: "इंग्रजी (English)", status: "मुख्य विषय" },
+      { subject: "सामान्य विज्ञान (भौतिक, रसायन व जीवशास्त्र)", medium: "इंग्रजी (English)", status: "मुख्य विषय" },
+      { subject: "सामाजिक शास्त्रे (इतिहास, भूगोल, नागरिकशास्त्र)", medium: "मराठी (Marathi)", status: "संकल्पनात्मक" },
+      { subject: "इंग्रजी भाषा व साहित्य", medium: "इंग्रजी (English)", status: "भाषा विषय" },
+      { subject: "मराठी आणि हिंदी भाषा", medium: "मराठी व हिंदी", status: "प्रथम व तृतीय भाषा" },
+      { subject: "संगणक शिक्षण (ICT)", medium: "इंग्रजी व मराठी", status: "डिजिटल साक्षरता" }
     ],
-    idealFor: "Students who want strong analytical fluency in English for Science & Math while enjoying effortless comprehension and top board exam scores through bilingual learning."
+    idealFor: "गणित आणि विज्ञानाचा पाया इंग्रजीतून पक्का करून शालेय शिक्षणात उत्तम यश मिळवू इच्छिणाऱ्या विद्यार्थ्यांसाठी आदर्श माध्यम."
   }
 ];
 
@@ -93,18 +96,18 @@ export const quickInfoItems = [
   {
     title: "Admissions 2026–27",
     subtitle: "English & Semi-English",
-    description: "Accepting admissions from Nursery to Grade 10 across both English Medium and Semi-English Medium wings.",
+    description: "Accepting admissions from Nursery to Grade 10 across both English Medium and Semi-English Medium streams.",
     actionText: "Apply Now",
     actionLink: "admissions",
     badge: "Open"
   },
   {
-    title: "Dual-Medium Wings",
+    title: "Dual Mediums",
     subtitle: "English & Semi-English",
     description: "Choose between 100% English Medium or bilingual Semi-English (Science & Math in English) curriculum.",
-    actionText: "Compare Wings",
+    actionText: "Compare Mediums",
     actionLink: "academics",
-    badge: "Dual Wing"
+    badge: "Dual Medium"
   },
   {
     title: "School Hours",
@@ -133,8 +136,8 @@ export const schoolHighlights = [
   },
   {
     id: "faculty",
-    title: "14 Dedicated Educators",
-    description: "Experienced teaching staff including 8 Primary & Upper Primary teachers (4 Male, 4 Female), 5 Pre-Primary educators, led by Head Teacher Sawant Jayshree Tanaji.",
+    title: "65 Teaching & 15 Non-Teaching Staff",
+    description: "65 qualified teaching educators and 15 non-teaching support staff members dedicated to academic excellence, student care, and smooth campus administration.",
     icon: "Award"
   },
   {
@@ -217,8 +220,8 @@ export const whyChoosePoints = [
   },
   {
     number: "04",
-    title: "1,373-Book Library & 5-System Computer Lab",
-    text: "Extensive reading materials and digital exposure ensuring students develop strong reading habits and modern digital familiarity early."
+    title: "65 Teaching & 15 Non-Teaching Staff",
+    text: "Experienced teaching faculty (65) and non-teaching support staff (15) dedicated to individualized student attention, campus safety, and high educational standards."
   },
   {
     number: "05",
@@ -241,10 +244,10 @@ export const facilitiesList = [
     image: null
   },
   {
-    id: "library",
-    title: "1,373+ Books Enriched Library",
-    category: "Knowledge Center",
-    description: "An expansive library holding 1,373+ titles including regional literature, biographies of national leaders and scientists, science encyclopedias, and reference books.",
+    id: "staff",
+    title: "65 Teaching & 15 Non-Teaching Staff",
+    category: "Faculty & Support Team",
+    description: "A highly dedicated team of 65 qualified teaching staff members and 15 non-teaching support staff members ensuring holistic academic mentoring and smooth campus administration.",
     image: null
   },
   {
@@ -261,13 +264,7 @@ export const facilitiesList = [
     description: "Open school playground dedicated to daily morning assemblies, drill routines, Kho-Kho, Kabaddi, running races, and annual sports day competitions.",
     image: null
   },
-  {
-    id: "hygiene",
-    title: "22 Modern Toilets & Clean Tap Water",
-    category: "Health & Sanitation",
-    description: "12 fully functional boys' toilets and 10 girls' toilets, coupled with continuous municipal tap water supply and drinking water stations.",
-    image: null
-  },
+
   {
     id: "campus-security",
     title: "Secure Private Building & Pucca Wall",
@@ -278,6 +275,18 @@ export const facilitiesList = [
 ];
 
 export const instagramReelsList = [
+  {
+    id: "reel-v0",
+    title: "Campus Gathering & Student Activities",
+    category: "School Life",
+    url: "/videos/VID_20260915_071622_881_bsl.mp4",
+    videoUrl: "/videos/VID_20260915_071622_881_bsl.mp4",
+    isLocal: true,
+    type: "video",
+    date: "Campus Video",
+    description: "Students gathering and activities on the school playground at Shri Dattabal Vidyamandir Kolhapur.",
+    thumbnail: null
+  },
   {
     id: "reel-v1",
     title: "Morning Assembly & Campus Prayers",
@@ -416,6 +425,7 @@ export const instagramReelsList = [
     category: "Cultural Events",
     url: "https://www.instagram.com/reel/DcEXBU1T8p8/?utm_source=ig_web_copy_link&igsi=MzRlODBiNWFlZA==",
     embedUrl: "https://www.instagram.com/reel/DcEXBU1T8p8/embed",
+    videoSrc: "/videos/reel-1.mp4",
     shortCode: "DcEXBU1T8p8",
     type: "reel",
     date: "Annual Cultural Fest",
@@ -428,6 +438,7 @@ export const instagramReelsList = [
     category: "Academics & Honors",
     url: "https://www.instagram.com/p/DbSWeFik-NI/?utm_source=ig_web_copy_link&igsi=MzRlODBiNWFlZA==",
     embedUrl: "https://www.instagram.com/p/DbSWeFik-NI/embed",
+    videoSrc: "/videos/reel-2.mp4",
     shortCode: "DbSWeFik-NI",
     type: "post",
     date: "School Highlights",
@@ -440,6 +451,7 @@ export const instagramReelsList = [
     category: "School Life",
     url: "https://www.instagram.com/reel/DbOWjMXIIZc/?utm_source=ig_web_copy_link&igsi=MzRlODBiNWFlZA==",
     embedUrl: "https://www.instagram.com/reel/DbOWjMXIIZc/embed",
+    videoSrc: "/videos/reel-3.mp4",
     shortCode: "DbOWjMXIIZc",
     type: "reel",
     date: "Daily Routine",
@@ -452,6 +464,7 @@ export const instagramReelsList = [
     category: "Sports & Drill",
     url: "https://www.instagram.com/reel/DbOWWnLIeGW/?utm_source=ig_web_copy_link&igsi=MzRlODBiNWFlZA==",
     embedUrl: "https://www.instagram.com/reel/DbOWWnLIeGW/embed",
+    videoSrc: "/videos/reel-4.mp4",
     shortCode: "DbOWWnLIeGW",
     type: "reel",
     date: "Sports Ground",
@@ -464,6 +477,7 @@ export const instagramReelsList = [
     category: "Classroom",
     url: "https://www.instagram.com/reel/DZhf-KDMNsb/?utm_source=ig_web_copy_link&igsi=MzRlODBiNWFlZA==",
     embedUrl: "https://www.instagram.com/reel/DZhf-KDMNsb/embed",
+    videoSrc: "/videos/reel-5.mp4",
     shortCode: "DZhf-KDMNsb",
     type: "reel",
     date: "Activity Day",
@@ -476,6 +490,7 @@ export const instagramReelsList = [
     category: "Traditions & Values",
     url: "https://www.instagram.com/reel/DWRnZ__IAj6/?utm_source=ig_web_copy_link&igsi=MzRlODBiNWFlZA==",
     embedUrl: "https://www.instagram.com/reel/DWRnZ__IAj6/embed",
+    videoSrc: "/videos/reel-6.mp4",
     shortCode: "DWRnZ__IAj6",
     type: "reel",
     date: "Festival Celebration",
@@ -488,6 +503,7 @@ export const instagramReelsList = [
     category: "Talent Showcase",
     url: "https://www.instagram.com/reel/DWCR-QRIxnp/?utm_source=ig_web_copy_link&igsi=MzRlODBiNWFlZA==",
     embedUrl: "https://www.instagram.com/reel/DWCR-QRIxnp/embed",
+    videoSrc: "/videos/reel-7.mp4",
     shortCode: "DWCR-QRIxnp",
     type: "reel",
     date: "Special Events",
@@ -615,29 +631,62 @@ export const achievementStats = [
 ];
 
 export const galleryItems = [
-  { id: 1, title: "Ashadhi Ekadashi Palkhi & Warkari Dindi", category: "Cultural", image: "/images/events/ashadhi-ekadashi.jpg" },
-  { id: 2, title: "Guru Purnima & Matru-Pitru Pujan", category: "Cultural", image: "/images/events/guru-purnima.jpg" },
-  { id: 3, title: "Ganesh Festival Fresh Modak Crafting", category: "Cultural", image: "/images/events/ganesh-modak-making.jpg" },
-  { id: 4, title: "Bal Krishna Janmashtami & Dahi Handi Joy", category: "Cultural", image: "/images/events/janmashtami-celebration.jpg" },
-  { id: 5, title: "Kindergarten Green Day & Nature Celebration", category: "Cultural", image: "/images/events/green-day.jpg" },
-  { id: 6, title: "Pre-Primary Sweet Corn Chef Celebration", category: "Cultural", image: "/images/events/sweet-corn-party.jpg" },
-  { id: 7, title: "Solar System Planetary Model Activity", category: "Classrooms", image: "/images/events/solar-system-activity.jpg" },
-  { id: 8, title: "Science Eclipse Practical Experiment", category: "Classrooms", image: "/images/events/eclipse-practical.jpg" },
-  { id: 9, title: "Paper Craft & Butterfly Making Activity", category: "Classrooms", image: "/images/events/butterfly-craft.jpg" },
-  { id: 10, title: "School Sports Tournament & Athletics Squad", category: "Sports", image: "/images/events/sports-tournament.jpg" },
-  { id: 11, title: "Independence Day Flag Salute & March-Past", category: "Events", image: "/images/events/independence-day.jpg" },
-  { id: 12, title: "Tree Plantation Campus Greening Drive", category: "Events", image: "/images/events/tree-plantation.jpg" },
-  { id: 13, title: "Wildlife & Snake Awareness Workshop", category: "Events", image: "/images/events/wildlife-awareness.jpg" },
-  { id: 14, title: "Eco-Friendly Cloth Bag Making Initiative", category: "Events", image: "/images/events/cloth-bag-making.jpg" },
-  { id: 15, title: "Fancy Dress & National Heroes Showcase", category: "Events", image: "/images/events/fancy-dress.jpg" },
-  { id: 16, title: "Faculty & Staff Collaboration Room", category: "Campus", image: "/images/teacher-staff-room.jpg" }
+  // Cultural Performances (3_Cultural_Dance_Performances)
+  { id: 1, title: "Annual Day Traditional Folk Dance", category: "Cultural", image: "/images/gallery/cultural-1.jpg", description: "Students presenting energetic Maharashtrian folk dance in colorful traditional attire on stage." },
+  { id: 2, title: "Cultural Stage Drama & Dance Performance", category: "Cultural", image: "/images/gallery/cultural-2.jpg", description: "Vibrant rhythmic dance performance celebrating Indian cultural heritage and art." },
+  { id: 3, title: "Student Classical Dance Presentation", category: "Cultural", image: "/images/gallery/cultural-3.jpg", description: "Talented young performers showcasing grace and synchronised choreographies." },
+  { id: 4, title: "Patriotic Group Dance Routine", category: "Cultural", image: "/images/gallery/cultural-4.jpg", description: "Heartfelt patriotic performance paying tribute to national culture and unity." },
+  { id: 5, title: "Folk Rhythm & Traditional Costume Showcase", category: "Cultural", image: "/images/gallery/cultural-5.jpg", description: "Festive celebration of regional dance traditions with authentic music and beats." },
+  { id: 6, title: "Primary Section Joyful Stage Performance", category: "Cultural", image: "/images/gallery/cultural-6.jpg", description: "Young students delivering an enthusiastic and joyous dance routine on stage." },
+  { id: 7, title: "Annual Gathering Stage Extravaganza", category: "Cultural", image: "/images/gallery/cultural-7.jpg", description: "Dynamic stage lighting and colorful costumes creating a memorable cultural evening." },
+  { id: 8, title: "Grand Finale Ensemble Dance", category: "Cultural", image: "/images/gallery/cultural-8.jpg", description: "All performers uniting in an inspiring final performance for teachers and parents." },
+
+  // Sports Day (Sports Day - क्रीडा महोत्सव)
+  { id: 9, title: "Annual Sports Day Track Sprint", category: "Sports", image: "/images/gallery/sports-1.jpg", description: "Students competing with great enthusiasm and athletic spirit on the campus ground." },
+  { id: 10, title: "Outdoor Running & Athletics Meet", category: "Sports", image: "/images/gallery/sports-2.jpg", description: "Encouraging sportsmanship, fitness, agility, and healthy competitive drive." },
+  { id: 11, title: "Inter-House Sports Relay Race", category: "Sports", image: "/images/gallery/sports-3.jpg", description: "House teams rallying and supporting one another in exciting sprint races." },
+  { id: 12, title: "Campus Ground PT & Drill Formations", category: "Sports", image: "/images/gallery/sports-4.jpg", description: "Disciplined synchronized physical training drills performed by students." },
+  { id: 13, title: "Student Athletics & Fitness Warm-ups", category: "Sports", image: "/images/gallery/sports-5.jpg", description: "Promoting physical wellness, teamwork, and active outdoor lifestyles." },
+  { id: 14, title: "Sports Tournament Final Competitions", category: "Sports", image: "/images/gallery/sports-6.jpg", description: "Determined young athletes giving their absolute best in tournament matches." },
+  { id: 15, title: "Sports Champions & Medalist Smiles", category: "Sports", image: "/images/gallery/sports-7.jpg", description: "Victorious sports participants celebrating on the field with their peers." },
+  { id: 16, title: "Playground Activities & Group Games", category: "Sports", image: "/images/gallery/sports-8.jpg", description: "Open playground recreation ensuring active and energetic student life." },
+
+  // Science Exhibition (Science Exhibition - विज्ञान प्रदर्शन)
+  { id: 17, title: "Science Exhibition Working Models", category: "Classrooms", image: "/images/gallery/science-1.jpg", description: "Students demonstrating practical scientific principles through working laboratory models." },
+  { id: 18, title: "Innovative Science & Tech Projects", category: "Classrooms", image: "/images/gallery/science-2.jpg", description: "Curious young minds presenting creative solutions to real-world scientific problems." },
+  { id: 19, title: "Physics & Energy Concept Demonstrations", category: "Classrooms", image: "/images/gallery/science-3.jpg", description: "Hands-on projects explaining planetary mechanics, optical rays, and energy concepts." },
+  { id: 20, title: "Environmental Science & Eco Models", category: "Classrooms", image: "/images/gallery/science-4.jpg", description: "Exhibits on sustainable energy, water conservation, and green technology." },
+  { id: 21, title: "Student Research & Project Presentation", category: "Classrooms", image: "/images/gallery/science-5.jpg", description: "Confident verbal explanations and live model demonstrations to visiting parents and teachers." },
+  { id: 22, title: "Biology & Botanical Study Exhibits", category: "Classrooms", image: "/images/gallery/science-6.jpg", description: "Detailed diagrams, specimens, and models showcasing natural science." },
+  { id: 23, title: "Science Fair Working Project Display", category: "Classrooms", image: "/images/gallery/science-7.jpg", description: "Encouraging scientific temperament, inquiry, and critical thinking." },
+  { id: 24, title: "Young Innovators Project Showcase", category: "Classrooms", image: "/images/gallery/science-8.jpg", description: "Proud students displaying their handmade science models and charts." },
+
+  // Events & Ceremonies (1_Inauguration_and_Lamp_Lighting & 2_Flag_Hoisting_and_Outdoor_Parade)
+  { id: 25, title: "Deep Prajvalan & Stage Inauguration", category: "Events", image: "/images/gallery/ceremony-1.jpg", description: "Traditional ceremonial lamp lighting marking the auspicious beginning of school events." },
+  { id: 26, title: "Auspicious Lamp Lighting with Dignitaries", category: "Events", image: "/images/gallery/ceremony-2.jpg", description: "Honored guests, trustees, and head teacher lighting the sacred diya." },
+  { id: 27, title: "Guest Welcome & Floral Felicitation", category: "Events", image: "/images/gallery/ceremony-3.jpg", description: "Warm reception and floral welcoming of visiting dignitaries." },
+  { id: 28, title: "Inaugural Stage Blessings & Prayers", category: "Events", image: "/images/gallery/ceremony-4.jpg", description: "Community gathering honoring school traditions and educational vision." },
+  { id: 29, title: "National Flag Hoisting Ceremony", category: "Events", image: "/images/gallery/ceremony-5.jpg", description: "Unfurling the national tricolor with pride and singing the national anthem on campus." },
+  { id: 30, title: "Outdoor Parade & March-Past Salute", category: "Events", image: "/images/gallery/ceremony-6.jpg", description: "Students marching in crisp step to celebrate national pride and discipline." },
+
+  // Campus Life & Morning Assembly
+  { id: 31, title: "Campus Ground Morning Gathering", category: "Campus", image: "/images/gallery/ceremony-7.jpg", description: "School-wide morning assembly with students, teachers, and staff on the campus ground." },
+  { id: 32, title: "Campus Marching Contingent & Drills", category: "Campus", image: "/images/gallery/ceremony-8.jpg", description: "Disciplined parade moving across the school premises during celebrations." },
+
+  // Awards & Prize Distribution (5_Prize_Distribution_and_Awards)
+  { id: 33, title: "Annual Prize Distribution & Merit Honors", category: "Events", image: "/images/gallery/awards-1.jpg", description: "Outstanding academic achievers receiving prestigious trophies and awards on stage." },
+  { id: 34, title: "Student Trophy & Medal Felicitation", category: "Events", image: "/images/gallery/awards-2.jpg", description: "Celebrating dedication, hard work, and scholastic excellence in front of parents." },
+  { id: 35, title: "Sports Champions Trophy Presentation", category: "Events", image: "/images/gallery/awards-3.jpg", description: "Medalists and tournament winners honored for exemplary sporting achievements." },
+  { id: 36, title: "Merit Certificate & Stage Accolades", category: "Events", image: "/images/gallery/awards-4.jpg", description: "Recognizing student excellence in curricular and co-curricular pursuits." },
+  { id: 37, title: "Teacher & Student Excellence Honors", category: "Events", image: "/images/gallery/awards-5.jpg", description: "Honoring the joint efforts of dedicated educators and diligent students." },
+  { id: 38, title: "Special Recognition & Award Ceremony", category: "Events", image: "/images/gallery/awards-6.jpg", description: "Trustees and dignitaries presenting commemorative mementos to proud achievers." }
 ];
 
 export const facultyList = [
   {
     id: "fac-1",
     name: "SAWANT JAYSHREE TANAJI",
-    role: "Principal (English Medium Wing)",
+    role: "Principal (English Medium)",
     department: "English Medium Administration",
     degree: "B.A., B.Ed., D.T.Ed.",
     bio: "Guiding Shri Dattabal English Medium School with visionary leadership, academic discipline, and a deep dedication to student character building and academic excellence.",
@@ -645,12 +694,12 @@ export const facultyList = [
   },
   {
     id: "fac-1b",
-    name: "Principal (Semi-English Medium)",
-    role: "Principal (Semi-English Medium Wing)",
+    name: "Mr. Sachin Baban Ubang",
+    role: "Principal (Semi-English Medium)",
     department: "Semi-English Medium Administration",
     degree: "M.A., B.Ed.",
-    bio: "Steering the Semi-English Medium Wing with a balanced focus on bilingual STEM readiness (Science & Math in English) and cultural values.",
-    image: "/images/semi-english-principal.jpg"
+    bio: "Steering the Semi-English Medium with a balanced focus on bilingual STEM readiness (Science & Math in English) and cultural values.",
+    image: "/images/sachin-ubang.jpg"
   },
   {
     id: "fac-2",
@@ -691,24 +740,24 @@ export const admissionsSteps = [
 export const trusteesList = [
   {
     id: "trustee-1",
-    name: "Trustee 1",
-    role: "President / Managing Trustee",
+    name: "Mrs. Palavi Nilesh Desai",
+    role: "President",
     trust: "Shri Dattabal Mission Divine, Kolhapur",
     image: "/images/trustee-1.jpg",
     bio: "Guiding the educational vision and moral values of Shri Dattabal Mission Divine, ensuring holistic growth and quality education for all students."
   },
   {
     id: "trustee-2",
-    name: "Trustee 2",
-    role: "Secretary / Trustee",
+    name: "Mr. Ved Nilesh Desai",
+    role: "Vice President",
     trust: "Shri Dattabal Mission Divine, Kolhapur",
     image: "/images/trustee-2.jpg",
-    bio: "Overseeing institutional administration, infrastructure development, and student welfare across English and Semi-English wings."
+    bio: "Overseeing institutional administration, infrastructure development, and student welfare across English and Semi-English mediums."
   },
   {
     id: "trustee-3",
-    name: "Trustee 3",
-    role: "Trustee",
+    name: "Mr. Nilesh Nirmaladevi Desai",
+    role: "Secretary",
     trust: "Shri Dattabal Mission Divine, Kolhapur",
     image: "/images/trustee-3.jpg",
     bio: "Supporting academic programs, community outreach, and cultural heritage initiatives of Shri Dattabal Vidyamandir since its inception."

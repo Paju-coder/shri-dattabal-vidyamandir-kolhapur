@@ -1,10 +1,11 @@
 import React from 'react';
 import { facilitiesList } from '../data/schoolData';
 import { motion } from 'motion/react';
-import { ArrowUpRight, Building2, BookOpen, Monitor, Award, ShieldCheck, Shield } from 'lucide-react';
+import { ArrowUpRight, Building2, BookOpen, Monitor, Award, ShieldCheck, Shield, Users } from 'lucide-react';
 
 const facilityIcons = {
   classrooms: Building2,
+  staff: Users,
   library: BookOpen,
   computers: Monitor,
   playground: Award,
@@ -34,7 +35,7 @@ export default function FacilitiesSection({ setActivePage }) {
               Well-Equipped Modern Infrastructure
             </h2>
             <p className="text-sm text-slate-600 mt-1">
-              Private school premises with 19 instructional classrooms, 1,373-book library, 5-computer unit, and 22 clean toilets.
+              Private school premises with 19 instructional classrooms, 65 teaching staff, 15 non-teaching staff, 5-computer unit, and 22 clean toilets.
             </p>
           </div>
 

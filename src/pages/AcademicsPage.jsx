@@ -1,7 +1,6 @@
 import React from 'react';
 import MediumsShowcase from '../sections/MediumsShowcase';
 import AcademicsOverview from '../sections/AcademicsOverview';
-import AchievementsSection from '../sections/AchievementsSection';
 
 export default function AcademicsPage({ setActivePage }) {
   return (
@@ -23,7 +22,6 @@ export default function AcademicsPage({ setActivePage }) {
 
       <MediumsShowcase setActivePage={setActivePage} />
       <AcademicsOverview setActivePage={setActivePage} />
-      <AchievementsSection />
     </div>
   );
 }

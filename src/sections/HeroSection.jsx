@@ -9,7 +9,7 @@ export default function HeroSection({ setActivePage }) {
   // Background campus video
   const heroVideo = {
     title: "Shri Dattabal Vidyamandir - Campus Life",
-    url: "/videos/VID_20260910_073358_262_bsl.mp4",
+    url: "/videos/VID_20260915_071622_881_bsl.mp4",
     poster: null
   };
 
@@ -21,21 +21,22 @@ export default function HeroSection({ setActivePage }) {
 
   // Spring physics interpolation for buttery smooth response
   const smoothProgress = useSpring(scrollYProgress, {
-    stiffness: 90,
-    damping: 26,
-    restDelta: 0.001
+    stiffness: 60,
+    damping: 30,
+    restDelta: 0.005
   });
 
   // 1. Background Video Layer (Cinematic Dolly Zoom & Parallax Shift)
   const videoScale = useTransform(smoothProgress, [0, 1], [1, 1.2]);
   const videoY = useTransform(smoothProgress, [0, 1], ["0%", "16%"]);
-  const videoOpacity = useTransform(smoothProgress, [0, 0.8, 1], [0.95, 0.7, 0.35]);
+  const videoOpacity = useTransform(smoothProgress, [0, 0.8, 1], [1, 0.85, 0.4]);
 
   // 2. Primary Heading Layer (Accelerated Multiplane Float + Liquid Blur Exit)
   const titleY = useTransform(smoothProgress, [0, 1], [0, -180]);
   const titleOpacity = useTransform(smoothProgress, [0, 0.65], [1, 0]);
   const titleScale = useTransform(smoothProgress, [0, 0.75], [1, 0.92]);
-  const titleBlur = useTransform(smoothProgress, [0, 0.55], ["blur(0px)", "blur(12px)"]);
+  // Removed blur filter — causes heavy GPU repaint on scroll
+  // const titleBlur = useTransform(smoothProgress, [0, 0.55], ["blur(0px)", "blur(12px)"]);
 
   // 3. Subtitle Description Layer
   const subtitleY = useTransform(smoothProgress, [0, 1], [0, -135]);
@@ -79,7 +80,7 @@ export default function HeroSection({ setActivePage }) {
   return (
     <section
       ref={containerRef}
-      className="relative w-full min-h-[100dvh] bg-[#011438] text-white overflow-hidden flex flex-col justify-center py-12 sm:py-0 transform-gpu select-none"
+      className="relative w-full min-h-[100dvh] bg-[#07193b] text-white overflow-hidden flex flex-col justify-center py-12 sm:py-0 transform-gpu select-none"
     >
       {/* ------------------------------------------------------------------ */}
       {/* 1. CINEMATIC BACKGROUND VIDEO WITH SCROLL-DRIVEN DOLLY ZOOM        */}
@@ -112,26 +113,23 @@ export default function HeroSection({ setActivePage }) {
           muted
           loop
           playsInline
-          preload="auto"
+          preload="none"
           className="w-full h-full object-cover transform-gpu"
         />
 
-        {/* Soft Contrast Gradient Overlays for High Legibility */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#011438]/90 via-[#011438]/55 to-[#011438]/25" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#011438] via-transparent to-[#011438]/60" />
+        {/* Lightened, Translucent Blue Gradients for Maximum Video Clarity */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#07193b]/45 via-[#0c285e]/15 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#07193b]/65 via-transparent to-sky-950/15" />
       </motion.div>
 
-      {/* Subtle Pattern Accent */}
-      <div className="absolute inset-0 bg-oak-pattern opacity-20 pointer-events-none z-0" />
-
-      {/* Dynamic Ambient Glow Orbs with Parallax Drift */}
+      {/* Dynamic Ambient Glow Orbs with Parallax Drift (Soft & Lighter) */}
       <motion.div
         style={{ x: glow1X, y: glow1Y }}
-        className="absolute -top-32 -left-32 w-80 sm:w-96 h-80 sm:h-96 bg-amber-500/20 rounded-full blur-3xl pointer-events-none z-0"
+        className="absolute -top-32 -left-32 w-80 sm:w-96 h-80 sm:h-96 bg-amber-400/15 rounded-full blur-3xl pointer-events-none z-0"
       />
       <motion.div
         style={{ x: glow2X, y: glow2Y }}
-        className="absolute -bottom-32 -right-32 w-80 sm:w-96 h-80 sm:h-96 bg-blue-500/25 rounded-full blur-3xl pointer-events-none z-0"
+        className="absolute -bottom-32 -right-32 w-80 sm:w-96 h-80 sm:h-96 bg-sky-400/20 rounded-full blur-3xl pointer-events-none z-0"
       />
 
       {/* ------------------------------------------------------------------ */}
@@ -147,17 +145,16 @@ export default function HeroSection({ setActivePage }) {
               y: titleY,
               opacity: titleOpacity,
               scale: titleScale,
-              filter: titleBlur,
             }}
-            initial={{ opacity: 0, y: 35, filter: "blur(8px)" }}
-            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-            transition={{ duration: 1, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+            initial={{ opacity: 0, y: 35 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
             className="space-y-1 sm:space-y-2 origin-left"
           >
-            <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-tight drop-shadow-2xl">
+            <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-tight drop-shadow-[0_4px_16px_rgba(0,0,0,0.9)]">
               Nurturing Wisdom &
             </h1>
-            <div className="text-3xl xs:text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-serif italic text-gold-shimmer font-light leading-tight drop-shadow-2xl">
+            <div className="text-3xl xs:text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-serif italic text-gold-shimmer font-light leading-tight drop-shadow-[0_4px_16px_rgba(0,0,0,0.9)]">
               Values for Life
             </div>
           </motion.div>
@@ -171,12 +168,12 @@ export default function HeroSection({ setActivePage }) {
             initial={{ opacity: 0, y: 25, filter: "blur(6px)" }}
             animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
             transition={{ duration: 0.9, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="text-blue-100 text-xs sm:text-base md:text-lg max-w-2xl leading-relaxed font-normal drop-shadow-md"
+            className="text-slate-100 text-xs sm:text-base md:text-lg max-w-2xl leading-relaxed font-normal drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)]"
           >
             Premier <strong>English Medium & Semi-English Medium</strong> education under <strong>Shri Dattabal Mission Divine Kolhapur</strong>. Fostering character, scientific curiosity, and state board excellence from <strong>Nursery to Grade 10</strong>.
           </motion.p>
 
-          {/* Dual Medium Academic Wings */}
+          {/* Dual Medium Academic Streams */}
           <motion.div
             style={{
               y: pillsY,
@@ -194,9 +191,8 @@ export default function HeroSection({ setActivePage }) {
                 if (el) el.scrollIntoView({ behavior: 'smooth' });
                 else if (setActivePage) setActivePage('academics');
               }}
-              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-white/[0.08] hover:bg-white/[0.14] border border-white/15 text-slate-200 hover:text-white text-xs font-medium tracking-wide backdrop-blur-md transition-all cursor-pointer"
+              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-slate-950/45 hover:bg-slate-900/65 border border-white/20 text-slate-100 hover:text-white text-xs font-medium tracking-wide backdrop-blur-md transition-all cursor-pointer shadow-md"
             >
-              <span className="w-1.5 h-1.5 rounded-full bg-sky-400" />
               <span>English Medium (Nursery – 10th)</span>
             </button>
 
@@ -207,9 +203,8 @@ export default function HeroSection({ setActivePage }) {
                 if (el) el.scrollIntoView({ behavior: 'smooth' });
                 else if (setActivePage) setActivePage('academics');
               }}
-              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-white/[0.08] hover:bg-white/[0.14] border border-white/15 text-slate-200 hover:text-white text-xs font-medium tracking-wide backdrop-blur-md transition-all cursor-pointer"
+              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-slate-950/45 hover:bg-slate-900/65 border border-white/20 text-slate-100 hover:text-white text-xs font-medium tracking-wide backdrop-blur-md transition-all cursor-pointer shadow-md"
             >
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
               <span>Semi-English Medium (Nursery – 10th)</span>
             </button>
           </motion.div>
@@ -233,7 +228,7 @@ export default function HeroSection({ setActivePage }) {
                   if (setActivePage) setActivePage('admissions');
                   window.scrollTo({ top: 0, behavior: 'smooth' });
                 }}
-                className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl bg-amber-500 hover:bg-amber-400 active:scale-[0.98] text-slate-950 font-bold text-xs sm:text-sm tracking-wide shadow-lg shadow-amber-500/20 hover:shadow-amber-500/30 transition-all cursor-pointer"
+                className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl bg-amber-500 hover:bg-amber-400 active:scale-[0.98] text-slate-950 font-bold text-xs sm:text-sm tracking-wide shadow-lg shadow-amber-500/25 hover:shadow-amber-500/35 transition-all cursor-pointer"
               >
                 <span>Admissions 2026–27</span>
                 <ArrowRight className="w-4 h-4 text-slate-950" />
@@ -243,7 +238,7 @@ export default function HeroSection({ setActivePage }) {
               <button
                 type="button"
                 onClick={scrollToContent}
-                className="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl bg-white/10 hover:bg-white/15 active:scale-[0.98] border border-white/20 text-white font-semibold text-xs sm:text-sm tracking-wide backdrop-blur-md transition-all cursor-pointer"
+                className="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl bg-slate-950/45 hover:bg-slate-900/65 active:scale-[0.98] border border-white/25 text-white font-semibold text-xs sm:text-sm tracking-wide backdrop-blur-md transition-all cursor-pointer shadow-md"
               >
                 <span>Explore School</span>
                 <ArrowDown className="w-3.5 h-3.5 text-white/70" />
@@ -253,28 +248,14 @@ export default function HeroSection({ setActivePage }) {
               <button
                 type="button"
                 onClick={handleOpenGallery}
-                className="inline-flex items-center gap-2 px-4 py-3.5 rounded-xl bg-transparent hover:bg-white/5 active:scale-[0.98] text-slate-300 hover:text-white font-medium text-xs sm:text-sm transition-all cursor-pointer"
+                className="inline-flex items-center gap-2 px-4 py-3.5 rounded-xl bg-slate-950/30 hover:bg-slate-900/50 active:scale-[0.98] border border-white/15 text-slate-200 hover:text-white font-medium text-xs sm:text-sm transition-all cursor-pointer backdrop-blur-sm"
               >
                 <Video className="w-4 h-4 text-amber-400" />
                 <span>Watch Campus Reel</span>
               </button>
             </div>
 
-            {/* Institutional Trust Indicators */}
-            <div className="flex flex-wrap items-center gap-x-6 gap-y-2 pt-1 text-xs text-slate-300/80 font-normal">
-              <span className="flex items-center gap-1.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 inline-block" />
-                Govt. Recognized (SSC Board)
-              </span>
-              <span className="flex items-center gap-1.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-amber-400 inline-block" />
-                Subhashnagar, Kolhapur
-              </span>
-              <span className="flex items-center gap-1.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-sky-400 inline-block" />
-                Estd. 1989
-              </span>
-            </div>
+
           </motion.div>
         </div>
       </div>

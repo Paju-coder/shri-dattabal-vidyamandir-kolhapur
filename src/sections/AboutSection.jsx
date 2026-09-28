@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Award, User, Camera, ShieldCheck, ArrowRight, Phone } from 'lucide-react';
+import { Award, User, ShieldCheck } from 'lucide-react';
 import { trusteesList } from '../data/schoolData';
 
 function TrusteeCard({ trustee, idx }) {
@@ -8,79 +8,56 @@ function TrusteeCard({ trustee, idx }) {
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0, scale: 0.97 }}
+      whileInView={{ opacity: 1, scale: 1 }}
       viewport={{ once: true }}
-      transition={{ delay: idx * 0.1, duration: 0.4 }}
-      className="bg-white rounded-3xl border border-slate-200/90 shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col justify-between group h-full"
+      transition={{ delay: idx * 0.1, duration: 0.5 }}
+      className="relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 group h-full"
+      style={{ minHeight: '520px' }}
     >
-      <div>
-        {/* Photo Container / Empty Space for Trustee Photo */}
-        <div className="relative p-4 sm:p-5 pb-0">
-          <div className="w-full aspect-[4/3] sm:aspect-[4/5] rounded-2xl overflow-hidden bg-gradient-to-b from-slate-100 to-slate-200/80 border-2 border-dashed border-slate-300 group-hover:border-amber-400/80 transition-colors relative flex flex-col items-center justify-center p-4 sm:p-6 text-center shadow-inner">
-            {!hasError && trustee.image ? (
-              <img
-                src={trustee.image}
-                alt={trustee.name}
-                onError={() => setHasError(true)}
-                className="w-full h-full object-cover object-top rounded-xl"
-              />
-            ) : (
-              <div className="flex flex-col items-center justify-center space-y-2.5">
-                <div className="w-14 h-14 sm:w-20 sm:h-20 rounded-full bg-white border border-slate-200 shadow-sm flex items-center justify-center text-slate-400 group-hover:text-amber-500 group-hover:scale-105 transition-all">
-                  <User className="w-7 h-7 sm:w-10 sm:h-10 text-slate-400" />
-                </div>
-                <div className="space-y-0.5">
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-50 border border-amber-200 text-amber-800 text-[10px] sm:text-[11px] font-bold uppercase tracking-wider">
-                    <Camera className="w-3 h-3 text-amber-600" />
-                    Photo Space
-                  </span>
-                  <p className="text-[10px] sm:text-[11px] text-slate-500 font-medium">
-                    (Ready for Trustee Photo)
-                  </p>
-                </div>
-              </div>
-            )}
-
-            {/* Official Emblem Stamp */}
-            <div className="absolute top-2.5 right-2.5 sm:top-3 sm:right-3 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white/90 backdrop-blur-sm border border-slate-200 p-0.5 shadow-sm">
-              <img
-                src="/images/dattabal_logo.png"
-                alt="Shri Dattabal Mission Divine"
-                className="w-full h-full object-contain rounded-full"
-              />
-            </div>
-          </div>
+      {/* Full-bleed background photo */}
+      {!hasError && trustee.image ? (
+        <img
+          src={trustee.image}
+          alt={trustee.name}
+          onError={() => setHasError(true)}
+          className="absolute inset-0 w-full h-full object-cover object-[center_20%] transition-transform duration-700 group-hover:scale-105"
+        />
+      ) : (
+        <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-slate-300 to-slate-400 flex items-center justify-center">
+          <User className="w-24 h-24 text-slate-500" />
         </div>
+      )}
 
-        {/* Trustee Information */}
-        <div className="p-5 sm:p-6 space-y-2.5">
-          <div>
-            <span className="inline-block px-2.5 py-0.5 rounded-md bg-blue-50 text-[#04439c] text-[11px] font-bold uppercase tracking-wider border border-blue-100 mb-1.5">
-              {trustee.role}
-            </span>
-            <h3 className="font-serif font-bold text-lg sm:text-2xl text-slate-900 leading-tight">
-              {trustee.name}
-            </h3>
-            <p className="text-xs text-amber-700 font-semibold mt-0.5">
-              {trustee.trust}
-            </p>
-          </div>
+      {/* Dark gradient overlay at bottom */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
 
-          <p className="text-xs sm:text-sm text-slate-600 leading-relaxed pt-0.5 line-clamp-3 sm:line-clamp-none">
-            {trustee.bio}
-          </p>
-        </div>
+      {/* Logo stamp — top right */}
+      <div className="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/90 backdrop-blur-sm border border-white/60 p-1 shadow-lg">
+        <img
+          src="/images/dattabal_logo.png"
+          alt="Shri Dattabal Mission Divine"
+          className="w-full h-full object-contain rounded-full"
+        />
       </div>
 
-      {/* Card Footer Badge */}
-      <div className="p-5 sm:p-6 pt-0">
-        <div className="pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] sm:text-xs text-slate-500">
+      {/* Info overlay — bottom */}
+      <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-6">
+        <span className="inline-block px-2.5 py-0.5 rounded-md bg-[#04439c]/80 backdrop-blur-sm text-white text-[11px] font-bold uppercase tracking-wider mb-2">
+          {trustee.role}
+        </span>
+        <h3 className="font-serif font-bold text-xl sm:text-2xl text-white leading-tight drop-shadow-md">
+          {trustee.name}
+        </h3>
+        <p className="text-xs text-amber-300 font-semibold mt-1">
+          {trustee.trust}
+        </p>
+        <div className="mt-3 pt-3 border-t border-white/20 flex items-center justify-between text-[11px] text-white/70">
           <span className="flex items-center gap-1">
-            <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
+            <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
             Trust Board Member
           </span>
-          <span className="font-semibold text-slate-700">Since 1989</span>
+          <span className="font-semibold text-white/80">Since 1989</span>
         </div>
       </div>
     </motion.div>
@@ -166,59 +143,10 @@ export default function AboutSection({ setActivePage }) {
         </div>
 
         {/* Desktop 3-Column Grid (>= md screens) */}
-        <div className="hidden md:grid md:grid-cols-3 gap-8 mb-14">
+        <div className="hidden md:grid md:grid-cols-3 gap-8">
           {trusteesList.map((trustee, idx) => (
             <TrusteeCard key={trustee.id} trustee={trustee} idx={idx} />
           ))}
-        </div>
-
-        {/* Trust Mission & Heritage Banner */}
-        <div className="rounded-3xl bg-gradient-to-r from-[#021f4a] via-[#043b8c] to-[#011438] p-6 sm:p-10 text-white shadow-xl border border-blue-900">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-            <div className="flex items-center gap-4 sm:gap-5">
-              <div className="w-14 h-14 sm:w-20 sm:h-20 rounded-full border-2 border-amber-400 bg-white p-1 shrink-0 shadow-lg">
-                <img
-                  src="/images/dattabal_logo.png"
-                  alt="Shri Dattabal Mission Divine"
-                  className="w-full h-full object-contain rounded-full"
-                />
-              </div>
-              <div className="space-y-1">
-                <h3 className="font-serif font-bold text-base sm:text-xl text-white">
-                  Shri Dattabal Mission Divine Trust
-                </h3>
-                <p className="text-xs sm:text-sm text-blue-200 max-w-2xl">
-                  Private Aided institution registered in Kolhapur, Maharashtra. Serving thousands of families with value-rich English and Semi-English education from Nursery to Grade 10.
-                </p>
-              </div>
-            </div>
-
-            <div className="flex flex-wrap items-center gap-2.5 sm:gap-3 shrink-0 w-full md:w-auto">
-              <button
-                type="button"
-                onClick={() => {
-                  if (setActivePage) setActivePage('contact');
-                  window.scrollTo({ top: 0, behavior: 'smooth' });
-                }}
-                className="inline-flex items-center justify-center gap-2 px-4 py-2.5 sm:px-5 sm:py-3 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs sm:text-sm transition-all shadow-md cursor-pointer flex-1 md:flex-initial"
-              >
-                <Phone className="w-4 h-4" />
-                <span>Contact Trust Office</span>
-              </button>
-
-              <button
-                type="button"
-                onClick={() => {
-                  if (setActivePage) setActivePage('about');
-                  window.scrollTo({ top: 0, behavior: 'smooth' });
-                }}
-                className="inline-flex items-center justify-center gap-2 px-4 py-2.5 sm:px-5 sm:py-3 rounded-xl bg-white/10 hover:bg-white/15 border border-white/20 text-white font-semibold text-xs sm:text-sm backdrop-blur-md transition-all cursor-pointer flex-1 md:flex-initial"
-              >
-                <span>School Legacy</span>
-                <ArrowRight className="w-4 h-4 text-amber-300" />
-              </button>
-            </div>
-          </div>
         </div>
 
       </div>
