@@ -9,7 +9,7 @@ export default function HeroSection({ setActivePage }) {
   // Background campus video
   const heroVideo = {
     title: "Shri Dattabal High School - Campus Life",
-    url: "/videos/VID_20260928_005508_644_bsl.mp4",
+    url: "/videos/hero-compressed.mp4",
     poster: null
   };
 
