@@ -12,7 +12,7 @@ export default function NoticesPage({ setActivePage }) {
           </span>
           <h1 className="text-4xl sm:text-5xl font-serif font-bold">School Notices & Circulars</h1>
           <p className="text-blue-100 max-w-2xl text-sm sm:text-base">
-            Official announcements, admissions notices, exam schedules, and circulars for parents of Shri Dattabal Vidyamandir.
+            Official announcements, admissions notices, exam schedules, and circulars for parents of Shri Dattabal High School.
           </p>
         </div>
       </div>

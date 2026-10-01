@@ -92,7 +92,7 @@ export default function AboutSection({ setActivePage }) {
             Board of Trustees
           </h2>
           <p className="text-xs sm:text-base text-slate-600 leading-relaxed">
-            Guiding <strong>Shri Dattabal Vidyamandir</strong> under the divine patronage of <strong>Shri Dattabal Mission Divine, Kolhapur</strong>. Committed to providing character, scientific temperament, and affordable educational excellence since 1989.
+            Guiding <strong>Shri Dattabal High School</strong> under the divine patronage of <strong>Shri Dattabal Mission Divine, Kolhapur</strong>. Committed to providing character, scientific temperament, and affordable educational excellence since 1989.
           </p>
         </div>
 

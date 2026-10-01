@@ -25,7 +25,7 @@ export default function StudentLifeSection({ setActivePage }) {
             </h2>
 
             <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-              At <strong>SHRI DATTABAL VIDYAMANDIR</strong>, student life blends cultural heritage with physical vitality and artistic freedom. Guided by 65 teaching staff and 15 non-teaching support staff, every child blossoms with confidence.
+              At <strong>SHRI DATTABAL HIGH SCHOOL</strong>, student life blends cultural heritage with physical vitality and artistic freedom. Guided by 65 teaching staff and 15 non-teaching support staff, every child blossoms with confidence.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
@@ -78,7 +78,7 @@ export default function StudentLifeSection({ setActivePage }) {
               </div>
               <div className="relative group overflow-hidden rounded-2xl shadow-md border border-slate-200">
                 <img
-                  src="/images/events/solar-system-activity.jpg"
+                  src="/images/events/science-exhibition.jpg"
                   alt="School Science Exhibition & Working Models"
                   className="w-full h-44 object-cover group-hover:scale-105 transition-transform duration-500"
                 />
@@ -90,7 +90,7 @@ export default function StudentLifeSection({ setActivePage }) {
             <div className="space-y-4 pt-6">
               <div className="relative group overflow-hidden rounded-2xl shadow-md border border-slate-200">
                 <img
-                  src="/images/events/ganesh-modak-making.jpg"
+                  src="/images/events/prize-distribution.jpg"
                   alt="Student Merit Awards & Trophy Felicitation"
                   className="w-full h-44 object-cover group-hover:scale-105 transition-transform duration-500"
                 />
@@ -100,7 +100,7 @@ export default function StudentLifeSection({ setActivePage }) {
               </div>
               <div className="relative group overflow-hidden rounded-2xl shadow-md border border-slate-200">
                 <img
-                  src="/images/events/ashadhi-ekadashi.jpg"
+                  src="/images/events/annual-gathering.jpg"
                   alt="Cultural Dance & Annual Gathering"
                   className="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-500"
                 />

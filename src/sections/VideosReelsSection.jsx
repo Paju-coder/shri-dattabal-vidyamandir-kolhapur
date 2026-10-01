@@ -246,7 +246,7 @@ export default function VideosReelsSection({ setActivePage }) {
             </h2>
 
             <p className="text-sm text-slate-600 leading-relaxed">
-              Experience the vibrant spirit of <strong>Shri Dattabal Vidyamandir</strong> through our official Instagram video reels, cultural gatherings, and student achievements.
+              Experience the vibrant spirit of <strong>Shri Dattabal High School</strong> through our official Instagram video reels, cultural gatherings, and student achievements.
             </p>
           </div>
 

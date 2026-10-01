@@ -17,7 +17,7 @@ export default function FacultySection({ setActivePage }) {
             Dedicated Educators Inspiring Young Minds
           </h2>
           <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
-            Led by Head Teacher <strong>SAWANT JAYSHREE TANAJI</strong>, our team of 65 dedicated teaching staff and 15 non-teaching support staff bring decades of pedagogical experience, character building, and state board excellence to English and Semi-English mediums.
+            Led by Principal <strong>ANURADHA RAJARAM AYAREKAR</strong>, our team of 65 dedicated teaching staff and 15 non-teaching support staff bring decades of pedagogical experience, character building, and state board excellence to English and Semi-English mediums.
           </p>
         </div>
 
@@ -29,7 +29,7 @@ export default function FacultySection({ setActivePage }) {
             <div className="lg:col-span-6 relative min-h-[300px] sm:min-h-[360px] bg-slate-100">
               <img
                 src="/images/teacher-staff-room.jpg"
-                alt="Faculty Collaborating in the Teacher Staff Room at Shri Dattabal Vidyamandir"
+                alt="Faculty Collaborating in the Teacher Staff Room at Shri Dattabal High School"
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent" />
@@ -57,7 +57,7 @@ export default function FacultySection({ setActivePage }) {
                   A High-Trust, Caring Academic Culture
                 </h3>
                 <p className="text-sm text-slate-600 leading-relaxed mt-2">
-                  At Shri Dattabal Vidyamandir, education goes beyond rote learning. Our 65 teaching staff and 15 non-teaching staff mentor children through personalized guidance, interactive learning, and science practicals.
+                  At Shri Dattabal High School, education goes beyond rote learning. Our 65 teaching staff and 15 non-teaching staff mentor children through personalized guidance, interactive learning, and science practicals.
                 </p>
               </div>
 

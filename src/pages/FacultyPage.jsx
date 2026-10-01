@@ -14,7 +14,7 @@ export default function FacultyPage({ setActivePage }) {
             Faculty & Staff Directory
           </h1>
           <p className="text-blue-100 max-w-2xl text-sm sm:text-base">
-            Led by Head Teacher <strong>SAWANT JAYSHREE TANAJI</strong>, with 14 dedicated educators (8 primary/upper-primary and 5 pre-primary teachers).
+            Led by Principal <strong>ANURADHA RAJARAM AYAREKAR</strong>, with 14 dedicated educators (8 primary/upper-primary and 5 pre-primary teachers).
           </p>
         </div>
       </div>

@@ -50,7 +50,7 @@ export default function MediumsShowcase({
           </h2>
 
           <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
-            At Shri Dattabal Vidyamandir, we understand that every child thrives in a tailored linguistic environment. We offer two dedicated streams under the Maharashtra State Board, both built on academic rigour and moral values.
+            At Shri Dattabal High School, we understand that every child thrives in a tailored linguistic environment. We offer two dedicated streams under the Maharashtra State Board, both built on academic rigour and moral values.
           </p>
 
           {/* Interactive Stream Switcher Buttons */}

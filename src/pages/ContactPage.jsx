@@ -12,7 +12,7 @@ export default function ContactPage() {
           </span>
           <h1 className="text-4xl sm:text-5xl font-serif font-bold">Contact & Visit Campus</h1>
           <p className="text-blue-100 max-w-2xl text-sm sm:text-base">
-            Located at 1A/4B, Bawada Rd, New Palace, Kasaba Bawada Main Rd, Kolhapur, Maharashtra 416003. Approachable by all-weather roads. Connect with our administrative team for admissions and enquiries.
+            Located at Opposite D.S.P. Office, Kasaba Bawada, Kolhapur - 416003. Approachable by all-weather roads. Connect with our administrative team for admissions and enquiries.
           </p>
         </div>
       </div>

@@ -55,7 +55,7 @@ export default function Navbar({ activePage, setActivePage }) {
 
             <div className="min-w-0">
               <div className="text-white font-serif font-extrabold text-xs sm:text-sm md:text-base lg:text-lg tracking-wide leading-tight group-hover:text-amber-200 transition-colors truncate">
-                SHRI DATTABAL VIDYAMANDIR
+                SHRI DATTABAL HIGH SCHOOL
               </div>
               <div className="text-[#a8d4ff] font-sans font-semibold text-[9px] sm:text-[10px] md:text-xs tracking-wider uppercase truncate">
                 English & Semi-English Medium • Kolhapur (Est. 1989)
@@ -195,7 +195,7 @@ export default function Navbar({ activePage, setActivePage }) {
                 </div>
                 <div className="flex items-center gap-2">
                   <Mail className="w-3.5 h-3.5 text-amber-400 shrink-0" />
-                  <span>dattabalvidyamandir.kop@gmail.com</span>
+                  <span>sdmdkop@gmail.com</span>
                 </div>
               </div>
             </div>

@@ -28,7 +28,7 @@ export default function Footer({ setActivePage }) {
 
             <div>
               <div className="text-white font-serif font-extrabold text-sm sm:text-base leading-tight">
-                SHRI DATTABAL VIDYAMANDIR
+                SHRI DATTABAL HIGH SCHOOL
               </div>
               <div className="text-[#a8d4ff] text-[10px] sm:text-[11px] font-semibold tracking-wider uppercase">
                 English & Semi-English Medium • Kolhapur (Est. 1989)
@@ -109,7 +109,7 @@ export default function Footer({ setActivePage }) {
             </li>
             <li className="flex items-start gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-amber-400 mt-1.5 shrink-0" />
-              <span>Head Teacher: Sawant Jayshree Tanaji</span>
+              <span>Principal: Anuradha Rajaram Ayarekar</span>
             </li>
           </ul>
         </div>
@@ -129,7 +129,7 @@ export default function Footer({ setActivePage }) {
           </div>
           <div className="flex items-center gap-2.5 text-xs text-slate-300">
             <Mail className="w-4 h-4 text-amber-400 shrink-0" />
-            <a href="mailto:dattabalvidyamandir.kop@gmail.com" className="hover:text-white break-all">{schoolDetails.email}</a>
+            <a href="mailto:sdmdkop@gmail.com" className="hover:text-white break-all">{schoolDetails.email}</a>
           </div>
           <div className="flex items-start gap-2.5 text-xs text-slate-300 pt-1">
             <Clock className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
@@ -145,7 +145,7 @@ export default function Footer({ setActivePage }) {
 
       {/* Bottom Bar */}
       <div className="max-w-7xl mx-auto px-4 md:px-6 pt-6 sm:pt-8 border-t border-blue-950/80 flex flex-col md:flex-row items-center justify-between text-xs text-slate-500 gap-3 sm:gap-4 text-center md:text-left">
-        <p>© 2026 SHRI DATTABAL VIDYAMANDIR, KOLHAPUR (Shri Dattabal Mission Divine). All rights reserved.</p>
+        <p>© 2026 SHRI DATTABAL HIGH SCHOOL, KOLHAPUR (Shri Dattabal Mission Divine). All rights reserved.</p>
 
         <div className="flex items-center space-x-5 sm:space-x-6">
           <button onClick={() => handleNav('contact')} className="hover:text-slate-300 transition-colors">Privacy Policy</button>

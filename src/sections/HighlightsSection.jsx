@@ -25,7 +25,7 @@ export default function HighlightsSection() {
             CORE HIGHLIGHTS
           </span>
           <h2 className="text-3xl sm:text-4xl font-serif font-bold text-slate-900">
-            Shri Dattabal Vidyamandir at a Glance
+            Shri Dattabal High School at a Glance
           </h2>
           <p className="text-sm sm:text-base text-slate-600">
             Providing holistic education, strong values, robust infrastructure, and digital learning for young minds in Kolhapur.

@@ -1,6 +1,19 @@
 import React, { useState } from 'react';
 import { schoolDetails } from '../data/schoolData';
-import { MapPin, Phone, Mail, Clock, Send, CheckCircle2, AlertCircle, ExternalLink } from 'lucide-react';
+import { inquiryConfig } from '../config/inquiryConfig';
+import { 
+  MapPin, 
+  Phone, 
+  Mail, 
+  Clock, 
+  Send, 
+  CheckCircle2, 
+  AlertCircle, 
+  ExternalLink,
+  Loader2,
+  MessageSquare,
+  ShieldCheck
+} from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
 export default function ContactSection() {
@@ -14,6 +27,8 @@ export default function ContactSection() {
 
   const [errors, setErrors] = useState({});
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState('');
 
   const validate = () => {
     const newErrors = {};
@@ -28,7 +43,7 @@ export default function ContactSection() {
     return newErrors;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const errs = validate();
     if (Object.keys(errs).length > 0) {
@@ -36,7 +51,84 @@ export default function ContactSection() {
       return;
     }
     setErrors({});
-    setSubmitted(true);
+    setIsSubmitting(true);
+    setSubmitError('');
+
+    try {
+      const hasWeb3Key = inquiryConfig.web3formsAccessKey && 
+                         inquiryConfig.web3formsAccessKey !== "YOUR_ACCESS_KEY_HERE" &&
+                         inquiryConfig.web3formsAccessKey.trim() !== "";
+
+      let success = false;
+
+      // 1. Try Web3Forms with FormData (official recommended format)
+      if (hasWeb3Key) {
+        try {
+          const payload = new FormData();
+          payload.append("access_key", inquiryConfig.web3formsAccessKey);
+          payload.append("name", formData.name);
+          payload.append("email", formData.email);
+          payload.append("phone", formData.phone);
+          payload.append("medium", formData.gradeLevel);
+          payload.append("message", formData.message);
+          payload.append("subject", `New Admission Inquiry: ${formData.name} (${formData.gradeLevel})`);
+          payload.append("from_name", "Shri Dattabal High School Kolhapur");
+
+          const response = await fetch("https://api.web3forms.com/submit", {
+            method: "POST",
+            body: payload
+          });
+
+          const result = await response.json();
+          if (response.ok && result.success) {
+            success = true;
+          }
+        } catch (web3Err) {
+          console.warn("Web3Forms submission notice:", web3Err);
+        }
+      }
+
+      // 2. Direct free fallback via FormSubmit.co directly to recipientEmail if needed
+      if (!success) {
+        const recipient = inquiryConfig.recipientEmail || schoolDetails.email || "sdmdkop@gmail.com";
+        const response = await fetch(`https://formsubmit.co/ajax/${recipient}`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+          },
+          body: JSON.stringify({
+            "Parent Name": formData.name,
+            "Email Address": formData.email,
+            "Phone Number": formData.phone,
+            "School Medium": formData.gradeLevel,
+            "Message / Inquiry": formData.message,
+            _subject: `New Admission Inquiry - ${formData.name} (${formData.gradeLevel})`,
+            _template: "table",
+            _captcha: "false"
+          })
+        });
+
+        const result = await response.json();
+        if (response.ok && (result.success === "true" || result.success === true || response.status === 200)) {
+          success = true;
+        } else {
+          throw new Error(result.message || "Form submission failed");
+        }
+      }
+
+      if (success) {
+        setSubmitted(true);
+      }
+    } catch (err) {
+      console.error("Inquiry form submission error:", err);
+      setSubmitError(
+        "Could not send inquiry automatically. Please call or email the school office directly at " + 
+        (inquiryConfig.recipientEmail || schoolDetails.email) + " or " + schoolDetails.phone
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -47,10 +139,10 @@ export default function ContactSection() {
             GET IN TOUCH
           </span>
           <h2 className="text-2xl sm:text-4xl font-serif font-bold text-slate-900">
-            Contact Shri Dattabal Vidyamandir
+            Contact Shri Dattabal High School
           </h2>
           <p className="text-xs sm:text-base text-slate-600">
-            We welcome parents and prospective students to connect with Head Teacher Sawant Jayshree Tanaji and our administrative office in Kolhapur.
+            We welcome parents and prospective students to connect with Principal Anuradha Rajaram Ayarekar and our administrative office in Kolhapur.
           </p>
         </div>
 
@@ -70,7 +162,7 @@ export default function ContactSection() {
                 <div>
                   <strong className="block text-slate-900 font-bold text-xs uppercase">School Location & Address</strong>
                   <span className="text-xs text-slate-600 leading-snug block">{schoolDetails.address}</span>
-                  <span className="block text-[11px] text-amber-700 font-semibold mt-0.5">Near New Palace, Kasaba Bawada Main Road, Kolhapur (Approachable by all-weather road)</span>
+                  <span className="block text-[11px] text-amber-700 font-semibold mt-0.5">Opposite D.S.P. Office, Kasaba Bawada, Kolhapur</span>
                 </div>
               </div>
 
@@ -90,7 +182,7 @@ export default function ContactSection() {
                 </div>
                 <div>
                   <strong className="block text-slate-900 font-bold text-xs uppercase">Official Email</strong>
-                  <a href="mailto:dattabalvidyamandir.kop@gmail.com" className="text-xs text-[#04439c] hover:underline font-semibold block break-all">{schoolDetails.email}</a>
+                  <a href="mailto:sdmdkop@gmail.com" className="text-xs text-[#04439c] hover:underline font-semibold block break-all">{schoolDetails.email}</a>
                 </div>
               </div>
 
@@ -114,7 +206,7 @@ export default function ContactSection() {
             <div className="pt-2 space-y-2">
               <div className="rounded-2xl overflow-hidden border border-slate-200 shadow-inner">
                 <iframe
-                  title="Shri Dattabal Vidyamandir Kolhapur Map"
+                  title="Shri Dattabal High School Kolhapur Map"
                   src={schoolDetails.mapEmbedUrl}
                   width="100%"
                   height="190"
@@ -149,7 +241,7 @@ export default function ContactSection() {
                   </div>
                   <h3 className="font-serif font-bold text-xl sm:text-2xl text-slate-900">Thank You for Reaching Out</h3>
                   <p className="text-xs sm:text-sm text-slate-600 leading-relaxed max-w-md mx-auto">
-                    Your inquiry has been received. Our administrative office and Head Teacher Sawant Jayshree Tanaji will get in touch with you shortly.
+                    Your inquiry has been received. Our administrative office and Principal Anuradha Rajaram Ayarekar will get in touch with you shortly.
                   </p>
                   <button
                     onClick={() => {
@@ -239,12 +331,38 @@ export default function ContactSection() {
                     {errors.message && <span className="text-[11px] text-red-600 mt-1 flex items-center gap-1"><AlertCircle className="w-3 h-3" /> {errors.message}</span>}
                   </div>
 
-                  <button
-                    type="submit"
-                    className="w-full py-3.5 sm:py-4 rounded-full bg-[#04439c] hover:bg-[#022c6b] text-white font-bold text-xs uppercase tracking-wider transition-colors shadow-md flex items-center justify-center gap-2 cursor-pointer active:scale-98"
-                  >
-                    <Send className="w-4 h-4" /> Submit Admission Inquiry
-                  </button>
+                  {submitError && (
+                    <div className="p-3.5 rounded-xl bg-red-50 border border-red-200 text-red-700 text-xs flex items-start gap-2.5">
+                      <AlertCircle className="w-4 h-4 shrink-0 mt-0.5 text-red-600" />
+                      <div className="flex-1 leading-relaxed">{submitError}</div>
+                    </div>
+                  )}
+
+                  <div className="pt-1 flex flex-col sm:flex-row gap-3">
+                    <button
+                      type="submit"
+                      disabled={isSubmitting}
+                      className="flex-1 py-3.5 sm:py-4 rounded-full bg-[#04439c] hover:bg-[#022c6b] disabled:bg-blue-300 text-white font-bold text-xs uppercase tracking-wider transition-colors shadow-md flex items-center justify-center gap-2 cursor-pointer active:scale-98"
+                    >
+                      {isSubmitting ? (
+                        <>
+                          <Loader2 className="w-4 h-4 animate-spin" />
+                          <span>Sending Inquiry...</span>
+                        </>
+                      ) : (
+                        <>
+                          <Send className="w-4 h-4" />
+                          <span>Submit Admission Inquiry</span>
+                        </>
+                      )}
+                    </button>
+
+                  </div>
+
+                  <div className="flex items-center justify-center gap-1.5 text-[11px] text-slate-500 pt-1">
+                    <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
+                    <span>Free direct email delivery to school office • Spam protected</span>
+                  </div>
                 </form>
               )}
             </AnimatePresence>

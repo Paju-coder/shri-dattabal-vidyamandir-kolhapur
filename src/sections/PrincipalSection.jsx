@@ -3,9 +3,9 @@ import { BookOpen, Settings } from 'lucide-react';
 
 const leaders = [
   {
-    name: 'Sawant Jayshree Tanaji',
+    name: 'Anuradha Rajaram Ayarekar',
     title: 'Principal',
-    subtitle: 'B.A., B.Ed., D.T.Ed.',
+    subtitle: 'English Medium',
     stream: 'English Medium',
     badgeBg: 'bg-[#04439c]',
     cardBg: 'bg-gradient-to-br from-[#021f4a] to-[#043b8c]',
@@ -27,11 +27,11 @@ const leaders = [
     borderGlow: 'ring-2 ring-amber-400/60',
     image: '/images/admin-officer.jpg',
     imagePosition: 'object-[center_15%]',
-    bio: 'Ensuring seamless school operations, student services, and institutional coordination across Shri Dattabal Vidyamandir.',
+    bio: 'Ensuring seamless school operations, student services, and institutional coordination across Shri Dattabal High School.',
     icon: <Settings className="w-3.5 h-3.5" />,
   },
   {
-    name: 'Mr. Sachin Baban Ubang',
+    name: 'Mr. Sachin Baban Davang',
     title: 'Principal',
     subtitle: 'Semi-English Medium',
     stream: 'Semi-English Medium',
@@ -39,7 +39,7 @@ const leaders = [
     cardBg: 'bg-gradient-to-br from-[#01353b] to-[#0d5c58]',
     accentColor: 'text-emerald-300',
     borderGlow: 'ring-2 ring-emerald-400/60',
-    image: '/images/sachin-ubang.jpg',
+    image: '/images/sachin-davang.jpg',
     imagePosition: 'object-[center_12%]',
     bio: 'Empowering students with a bilingual technical edge in Science & Mathematics while anchoring strong Marathi cultural roots.',
     icon: <BookOpen className="w-3.5 h-3.5" />,
@@ -118,9 +118,11 @@ export default function PrincipalSection() {
                   <p className={`text-sm font-semibold mt-0.5 ${leader.accentColor}`}>
                     {leader.title}
                   </p>
-                  <p className="text-[11px] text-white/50 font-medium mt-0.5">
-                    {leader.subtitle}
-                  </p>
+                  {leader.subtitle && (
+                    <p className="text-[11px] text-white/50 font-medium mt-0.5">
+                      {leader.subtitle}
+                    </p>
+                  )}
                 </div>
 
                 <div className="h-px bg-white/15" />

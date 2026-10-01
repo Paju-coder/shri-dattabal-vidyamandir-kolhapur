@@ -104,7 +104,7 @@ export default function LightboxModal({ item, items = [], onClose }) {
                 ) : (
                   <div className="w-full h-full flex flex-col items-center justify-center gap-3 text-slate-500">
                     <div className="w-20 h-20 rounded-full bg-slate-800 flex items-center justify-center text-3xl">🏫</div>
-                    <span className="text-sm font-medium">Shri Dattabal Vidyamandir</span>
+                    <span className="text-sm font-medium">Shri Dattabal High School</span>
                   </div>
                 )}
               </div>
@@ -125,9 +125,9 @@ export default function LightboxModal({ item, items = [], onClose }) {
             </motion.div>
           </AnimatePresence>
 
-          {/* Dot indicators */}
-          {hasNav && (
-            <div className="flex justify-center gap-1.5 pb-4 bg-slate-900">
+          {/* Dot indicators or pagination bar */}
+          {hasNav && items.length <= 25 && (
+            <div className="flex justify-center gap-1.5 pb-4 bg-slate-900 px-4 flex-wrap">
               {items.map((_, i) => (
                 <button
                   key={i}

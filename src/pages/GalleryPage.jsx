@@ -12,7 +12,7 @@ export default function GalleryPage({ setActivePage }) {
             OFFICIAL VIDEOS, REELS & PHOTO ARCHIVES
           </span>
           <h1 className="text-4xl sm:text-5xl font-serif font-bold">
-            Shri Dattabal Vidyamandir Media Gallery
+            Shri Dattabal High School Media Gallery
           </h1>
           <p className="text-blue-100 max-w-2xl text-sm sm:text-base">
             Watch our student performances, Lezim drills, annual gatherings, morning assemblies, and campus photography.

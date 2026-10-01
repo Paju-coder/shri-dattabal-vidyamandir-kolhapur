@@ -37,7 +37,7 @@ export default function AdmissionsTimeline({
         {
           step: "03",
           title: "Parent & Student Interaction",
-          desc: "A warm orientation meeting with Head Teacher Sawant Jayshree Tanaji and senior teachers to understand your child's goals."
+          desc: "A warm orientation meeting with Principal Anuradha Rajaram Ayarekar and senior teachers to understand your child's goals."
         },
         {
           step: "04",
@@ -59,7 +59,7 @@ export default function AdmissionsTimeline({
         {
           step: "03",
           title: "Parent & Student Interaction",
-          desc: "A friendly orientation meeting with Principal Mr. Sachin Baban Ubang and educators to discuss bilingual learning readiness."
+          desc: "A friendly orientation meeting with Principal Mr. Sachin Baban Davang and educators to discuss bilingual learning readiness."
         },
         {
           step: "04",
@@ -97,7 +97,7 @@ export default function AdmissionsTimeline({
           <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
             {isEnglish
               ? "Enrolling for the academic year 2026–2027 in our 100% English immersion stream (Nursery to Grade 10) under the Maharashtra State Board."
-              : "Enrolling for the academic year 2026–2027 in our bilingual STEM stream (Nursery to Grade 10) under Principal Mr. Sachin Baban Ubang."}
+              : "Enrolling for the academic year 2026–2027 in our bilingual STEM stream (Nursery to Grade 10) under Principal Mr. Sachin Baban Davang."}
           </p>
 
           {/* Stream Switcher Tabs */}
@@ -225,7 +225,7 @@ export default function AdmissionsTimeline({
                 </h3>
 
                 <p className="text-sm sm:text-base text-slate-600 leading-relaxed max-w-4xl mb-6">
-                  Enrolling from Nursery to Grade 10 under Principal Mr. Sachin Baban Ubang. Perfect for students seeking English fluency in Science & Math while maintaining effortless concept grasp in Marathi for Social Sciences.
+                  Enrolling from Nursery to Grade 10 under Principal Mr. Sachin Baban Davang. Perfect for students seeking English fluency in Science & Math while maintaining effortless concept grasp in Marathi for Social Sciences.
                 </p>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5 mb-6">

@@ -16,7 +16,7 @@ export default function WhyChooseUs() {
               Shaping Bright Futures in Kolhapur.
             </h2>
             <p className="text-blue-100/90 text-sm sm:text-base leading-relaxed">
-              For over 35 years since 1989, <strong>Shri Dattabal Vidyamandir</strong> has stood as a beacon of values, cultural pride, strong educational fundamentals, and student development under Shri Dattabal Mission Divine Kolhapur.
+              For over 35 years since 1989, <strong>Shri Dattabal High School</strong> has stood as a beacon of values, cultural pride, strong educational fundamentals, and student development under Shri Dattabal Mission Divine Kolhapur.
             </p>
 
             <div className="p-5 rounded-2xl bg-white/5 border border-white/10 space-y-2">

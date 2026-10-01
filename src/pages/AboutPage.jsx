@@ -13,7 +13,7 @@ export default function AboutPage({ setActivePage }) {
             SHRI DATTABAL MISSION DIVINE • ESTABLISHED 1989
           </span>
           <h1 className="text-4xl sm:text-5xl font-serif font-bold">
-            About Shri Dattabal Vidyamandir
+            About Shri Dattabal High School
           </h1>
           <p className="text-blue-100 max-w-2xl text-sm sm:text-base">
             Managed by Private Aided Trust, providing rich educational foundation, 19 modern classrooms, 65 teaching staff, 15 non-teaching staff, sports playground, and values in Kolhapur, Maharashtra.

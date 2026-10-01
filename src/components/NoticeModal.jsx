@@ -48,7 +48,7 @@ export default function NoticeModal({ notice, onClose }) {
             <p>{notice.content}</p>
 
             <div className="pt-4 border-t border-slate-100 flex items-center justify-between">
-              <span className="text-xs text-slate-400">Official Shri Dattabal Vidyamandir Circular</span>
+              <span className="text-xs text-slate-400">Official Shri Dattabal High School Circular</span>
 
               <button
                 onClick={() => alert(`Downloading official PDF circular: ${notice.title}.pdf`)}

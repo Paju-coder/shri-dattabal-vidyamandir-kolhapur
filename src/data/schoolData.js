@@ -1,5 +1,5 @@
 export const schoolDetails = {
-  name: "SHRI DATTABAL VIDYAMANDIR",
+  name: "SHRI DATTABAL HIGH SCHOOL",
   trustName: "Shri Dattabal Mission Divine Kolhapur",
   tagline: "Nurturing Wisdom, Values & Academic Excellence Since 1989",
   established: 1989,
@@ -9,14 +9,14 @@ export const schoolDetails = {
   mediums: ["English Medium (Nursery - 10th)", "Semi-English Medium (Nursery - 10th)"],
   grades: "Nursery to Grade 10",
   academicSession: "Starts in April",
-  headTeacher: "SAWANT JAYSHREE TANAJI",
-  address: "1A/4B, Bawada Rd, New Palace, Kasaba Bawada Main Rd, New Palace, Kolhapur, Maharashtra - 416003",
-  addressShort: "New Palace, Kasaba Bawada, Kolhapur",
+  headTeacher: "ANURADHA RAJARAM AYAREKAR",
+  address: "Opposite D.S.P. Office, Kasaba Bawada, Kolhapur - 416003",
+  addressShort: "Opposite D.S.P. Office, Kasaba Bawada, Kolhapur",
   pincode: "416003",
-  mapQueryUrl: "https://www.google.com/maps/search/?api=1&query=1A%2F4B%2C+Bawada+Rd+New+Palace%2C+Kasaba+Bawada+Main+Rd%2C+New+Palace%2C+Kolhapur%2C+Maharashtra+416003",
-  mapEmbedUrl: "https://maps.google.com/maps?q=1A%2F4B%2C+Bawada+Rd+New+Palace%2C+Kasaba+Bawada+Main+Rd%2C+New+Palace%2C+Kolhapur%2C+Maharashtra+416003&t=&z=16&ie=UTF8&iwloc=&output=embed",
-  phone: "+91 231 265 4890 / +91 98220 12345",
-  email: "dattabalvidyamandir.kop@gmail.com",
+  mapQueryUrl: "https://www.google.com/maps/search/?api=1&query=Shri+Dattabal+Vidyamandir%2C+Kasaba+Bawada%2C+Kolhapur",
+  mapEmbedUrl: "https://maps.google.com/maps?q=Shri+Dattabal+Vidyamandir%2C+Kasaba+Bawada%2C+Kolhapur&t=&z=16&ie=UTF8&iwloc=&output=embed",
+  phone: "8983626675",
+  email: "sdmdkop@gmail.com",
   schoolHoursNursery: "10:00 AM – 1:30 PM (Mon–Sat)",
   schoolHoursEnglish: "10:00 AM – 4:00 PM (Mon–Sat)",
   schoolHoursSemiEnglish: "11:00 AM – 5:00 PM (Mon–Sat)",
@@ -284,7 +284,7 @@ export const instagramReelsList = [
     isLocal: true,
     type: "video",
     date: "Campus Video",
-    description: "Students gathering and activities on the school playground at Shri Dattabal Vidyamandir Kolhapur.",
+    description: "Students gathering and activities on the school playground at Shri Dattabal High School Kolhapur.",
     thumbnail: null
   },
   {
@@ -442,7 +442,7 @@ export const instagramReelsList = [
     shortCode: "DbSWeFik-NI",
     type: "post",
     date: "School Highlights",
-    description: "Felicitation of meritorious students, creative project displays, and teacher-guided academic milestones at Shri Dattabal Vidyamandir.",
+    description: "Felicitation of meritorious students, creative project displays, and teacher-guided academic milestones at Shri Dattabal High School.",
     thumbnail: null
   },
   {
@@ -538,7 +538,7 @@ export const eventsList = [
     time: "8:00 AM – 1:00 PM",
     location: "Main Assembly Ground",
     description: "Welcome of new students, distribution of textbooks, and traditional Saraswati Poojan to mark the new school session starting in April.",
-    image: "/images/events/guru-purnima.jpg"
+    image: "/images/events/lamp-lighting-ceremony.jpg"
   },
   {
     id: "event-2",
@@ -561,8 +561,8 @@ export const eventsList = [
     category: "Tradition",
     time: "9:00 AM – 1:00 PM",
     location: "Auditorium Hall",
-    description: "Upper primary students take on the role of teachers for the day, honoring our dedicated educators and Head Teacher Sawant Jayshree Tanaji.",
-    image: "/images/teacher-staff-room.jpg"
+    description: "Upper primary students take on the role of teachers for the day, honoring our dedicated educators and Principal Anuradha Rajaram Ayarekar.",
+    image: "/images/events/guru-purnima.jpg"
   },
   {
     id: "event-4",
@@ -574,7 +574,7 @@ export const eventsList = [
     time: "9:00 AM – 5:00 PM",
     location: "Main Stage & Sports Ground",
     description: "Grand annual day featuring traditional folk dances, Lezim performances, drama, elocution, running races, and community felicitation.",
-    image: "/images/events/ashadhi-ekadashi.jpg"
+    image: "/images/events/annual-gathering.jpg"
   }
 ];
 
@@ -586,7 +586,7 @@ export const noticesList = [
     category: "Admissions",
     urgent: true,
     summary: "Pre-Primary (Nursery/Kindergarten) and Standard 1st to 7th admissions are now open for the upcoming session starting in April.",
-    content: "Shri Dattabal Vidyamandir Kolhapur announces admissions open for Pre-Primary and Classes 1st to 7th. Parents are invited to visit the school administrative office between 8:30 AM and 3:30 PM with the student's birth certificate, Aadhaar card, and passport-size photos.",
+    content: "Shri Dattabal High School Kolhapur announces admissions open for Pre-Primary and Classes 1st to 7th. Parents are invited to visit the school administrative office between 8:30 AM and 3:30 PM with the student's birth certificate, Aadhaar card, and passport-size photos.",
     pdfUrl: "#"
   },
   {
@@ -679,27 +679,72 @@ export const galleryItems = [
   { id: 35, title: "Sports Champions Trophy Presentation", category: "Events", image: "/images/gallery/awards-3.jpg", description: "Medalists and tournament winners honored for exemplary sporting achievements." },
   { id: 36, title: "Merit Certificate & Stage Accolades", category: "Events", image: "/images/gallery/awards-4.jpg", description: "Recognizing student excellence in curricular and co-curricular pursuits." },
   { id: 37, title: "Teacher & Student Excellence Honors", category: "Events", image: "/images/gallery/awards-5.jpg", description: "Honoring the joint efforts of dedicated educators and diligent students." },
-  { id: 38, title: "Special Recognition & Award Ceremony", category: "Events", image: "/images/gallery/awards-6.jpg", description: "Trustees and dignitaries presenting commemorative mementos to proud achievers." }
+  { id: 38, title: "Special Recognition & Award Ceremony", category: "Events", image: "/images/gallery/awards-6.jpg", description: "Trustees and dignitaries presenting commemorative mementos to proud achievers." },
+
+  // Campus Life, Classroom Activities & Student Gatherings (New Photo Collection)
+  { id: 39, title: "Campus Activity & Student Assembly", category: "Campus", image: "/images/gallery/campus-activity-1.jpeg", description: "Students actively engaged during campus activities and collective programs." },
+  { id: 40, title: "Classroom Learning & Interactive Sessions", category: "Classrooms", image: "/images/gallery/campus-activity-2.jpeg", description: "Dedicated educators guiding students through interactive classroom lessons." },
+  { id: 41, title: "Student Creative Workshop & Group Work", category: "Classrooms", image: "/images/gallery/campus-activity-3.jpeg", description: "Hands-on project work fostering team collaboration and creativity." },
+  { id: 42, title: "Outdoor Campus Gathering & Celebration", category: "Events", image: "/images/gallery/campus-activity-4.jpeg", description: "Enthusiastic participation of students in vibrant school events and functions." },
+  { id: 43, title: "Cultural Program & Stage Presentation", category: "Cultural", image: "/images/gallery/campus-activity-5.jpeg", description: "Students showcasing their artistic talents and performing arts on stage." },
+  { id: 44, title: "School Ceremony & Special Event", category: "Events", image: "/images/gallery/campus-activity-6.jpeg", description: "Celebrating auspicious school milestones and commemorative occasions." },
+  { id: 45, title: "Campus Drill & Physical Fitness Session", category: "Sports", image: "/images/gallery/campus-activity-7.jpeg", description: "Promoting physical fitness, team discipline, and healthy exercise on campus grounds." },
+  { id: 46, title: "Student Sports & Athletic Competitions", category: "Sports", image: "/images/gallery/campus-activity-8.jpeg", description: "High-energy sports matches building sportsmanship and athletic stamina." },
+  { id: 47, title: "Interactive Learning & Smart Class Activities", category: "Classrooms", image: "/images/gallery/campus-activity-9.jpeg", description: "Engaging classroom instruction building foundational conceptual clarity." },
+  { id: 48, title: "Annual Gathering Moments & Festivities", category: "Cultural", image: "/images/gallery/campus-activity-10.jpeg", description: "Color, joy, and celebration as students take center stage." },
+  { id: 49, title: "Teacher-Student Mentorship & Guidance", category: "Campus", image: "/images/gallery/campus-activity-11.jpeg", description: "Caring faculty providing personalized mentorship and academic guidance." },
+  { id: 50, title: "Science & Innovation Fair Presentation", category: "Classrooms", image: "/images/gallery/campus-activity-12.jpeg", description: "Demonstrating innovative scientific models and curiosity-driven experiments." },
+  { id: 51, title: "Traditional Celebration & Festive Assembly", category: "Cultural", image: "/images/gallery/campus-activity-13.jpeg", description: "Honoring Marathi culture, cultural traditions, and national festivals." },
+  { id: 52, title: "Pre-Primary & Primary Fun Learning", category: "Campus", image: "/images/gallery/campus-activity-14.jpeg", description: "Young learners participating in joyous play-way educational activities." },
+  { id: 53, title: "Student Group Performance & Recitation", category: "Cultural", image: "/images/gallery/campus-activity-15.jpeg", description: "Building public speaking, poetry recitation, and performing confidence." },
+  { id: 54, title: "Campus Recreation & Play Time", category: "Sports", image: "/images/gallery/campus-activity-16.jpeg", description: "Energetic sports and recess play on the school's open playground." },
+  { id: 55, title: "Art, Craft & Creative Expression", category: "Classrooms", image: "/images/gallery/campus-activity-17.jpeg", description: "Exhibiting vibrant student art, crafts, and drawing projects." },
+  { id: 56, title: "School Assembly & National Pride", category: "Events", image: "/images/gallery/campus-activity-18.jpeg", description: "Disciplined morning assembly fostering values, unity, and integrity." },
+  { id: 57, title: "Annual Sports Meet & Sprint Action", category: "Sports", image: "/images/gallery/campus-activity-19.jpeg", description: "Students racing towards the finish line in inter-house tournaments." },
+  { id: 58, title: "Stage Drama & Musical Performance", category: "Cultural", image: "/images/gallery/campus-activity-20.jpeg", description: "Expressive acting and musical performances delighting audiences." },
+  { id: 59, title: "Award Felicitation & Stage Honors", category: "Events", image: "/images/gallery/campus-activity-21.jpeg", description: "Honoring star achievers and outstanding student leaders." },
+  { id: 60, title: "Classroom Project Demonstration", category: "Classrooms", image: "/images/gallery/campus-activity-22.jpeg", description: "Collaborative academic presentations in our well-equipped classrooms." },
+  { id: 61, title: "Campus Community & Fellowship", category: "Campus", image: "/images/gallery/campus-activity-23.jpeg", description: "Fostering long-lasting friendships, kindness, and cooperative spirit." },
+  { id: 62, title: "Cultural Dance in Festive Attire", category: "Cultural", image: "/images/gallery/campus-activity-24.jpeg", description: "Vibrant ethnic dance performance capturing regional heritage." },
+  { id: 63, title: "Student Team Building Activities", category: "Campus", image: "/images/gallery/campus-activity-25.jpeg", description: "Strengthening communication and leadership through group activities." },
+  { id: 64, title: "Sports Day Tug of War & Team Matches", category: "Sports", image: "/images/gallery/campus-activity-26.jpeg", description: "High-spirited house matches testing strength, stamina, and team spirit." },
+  { id: 65, title: "Science Demonstration & Lab Insights", category: "Classrooms", image: "/images/gallery/campus-activity-27.jpeg", description: "Exploration of practical science concepts through student models." },
+  { id: 66, title: "Dignitary Welcome & Campus Honors", category: "Events", image: "/images/gallery/campus-activity-28.jpeg", description: "Warmly welcoming educationists and trustees to our school events." },
+  { id: 67, title: "Music, Singing & Choir Presentations", category: "Cultural", image: "/images/gallery/campus-activity-29.jpeg", description: "Harmonious group songs and patriotic choir presentations." },
+  { id: 68, title: "Yoga & Mindfulness Practice", category: "Sports", image: "/images/gallery/campus-activity-30.jpeg", description: "Daily yoga and breathing exercises supporting mental focus and well-being." },
+  { id: 69, title: "Library Reading & Literary Moments", category: "Classrooms", image: "/images/gallery/campus-activity-31.jpeg", description: "Quiet reading and reference exploration in our 1,373-book library." },
+  { id: 70, title: "Campus Festivities & Joyful Celebrations", category: "Events", image: "/images/gallery/campus-activity-32.jpeg", description: "Special celebration assemblies bringing the entire school together." },
+  { id: 71, title: "Folk Dance Routine & Rhythms", category: "Cultural", image: "/images/gallery/campus-activity-33.jpeg", description: "Lively folk dance performance celebrating regional culture." },
+  { id: 72, title: "Field Day & Athletic Exercises", category: "Sports", image: "/images/gallery/campus-activity-34.jpeg", description: "Athletic drills and outdoor games promoting physical coordination." },
+  { id: 73, title: "Interactive Workshop & Skill Development", category: "Classrooms", image: "/images/gallery/campus-activity-35.jpeg", description: "Students actively acquiring practical problem-solving skills." },
+  { id: 74, title: "Annual Gathering Gala Moments", category: "Cultural", image: "/images/gallery/campus-activity-36.jpeg", description: "Unforgettable memories from our grand annual gathering celebrations." },
+  { id: 75, title: "Morning Assembly Prayer & Pledge", category: "Campus", image: "/images/gallery/campus-activity-37.jpeg", description: "Beginning the school day with heartfelt prayers, pledge, and reflections." },
+  { id: 76, title: "Sports Tournament Champions", category: "Sports", image: "/images/gallery/campus-activity-38.jpeg", description: "Proud athletes holding their winner certificates and tournament cups." },
+  { id: 77, title: "Creative Art Exhibition Display", category: "Classrooms", image: "/images/gallery/campus-activity-39.jpeg", description: "Showcasing student imagination through paintings and handcrafts." },
+  { id: 78, title: "Stage Performance & Costumed Drama", category: "Cultural", image: "/images/gallery/campus-activity-40.jpeg", description: "Dramatization of historical and moral stories by talented students." },
+  { id: 79, title: "Parent-Teacher Community Gathering", category: "Events", image: "/images/gallery/campus-activity-41.jpeg", description: "Close collaborative partnership between parents, teachers, and school." },
+  { id: 80, title: "Student March-Past & Flag Salute", category: "Events", image: "/images/gallery/campus-activity-42.jpeg", description: "Crisp marching formations commemorating national festival celebrations." },
+  { id: 81, title: "Grand Campus Life Celebration", category: "Campus", image: "/images/gallery/campus-activity-43.jpeg", description: "Cherished moments reflecting the joyful spirit of Shri Dattabal High School." }
 ];
 
 export const facultyList = [
   {
     id: "fac-1",
-    name: "SAWANT JAYSHREE TANAJI",
-    role: "Principal (English Medium)",
+    name: "ANURADHA RAJARAM AYAREKAR",
+    role: "Principal of English Medium",
     department: "English Medium Administration",
-    degree: "B.A., B.Ed., D.T.Ed.",
+    degree: "",
     bio: "Guiding Shri Dattabal English Medium School with visionary leadership, academic discipline, and a deep dedication to student character building and academic excellence.",
     image: "/images/principal.jpg"
   },
   {
     id: "fac-1b",
-    name: "Mr. Sachin Baban Ubang",
+    name: "Mr. Sachin Baban Davang",
     role: "Principal (Semi-English Medium)",
     department: "Semi-English Medium Administration",
     degree: "M.A., B.Ed.",
     bio: "Steering the Semi-English Medium with a balanced focus on bilingual STEM readiness (Science & Math in English) and cultural values.",
-    image: "/images/sachin-ubang.jpg"
+    image: "/images/sachin-davang.jpg"
   },
   {
     id: "fac-2",
@@ -733,7 +778,7 @@ export const facultyList = [
 export const admissionsSteps = [
   { step: "01", title: "Information & Admission Form", desc: "Visit the school office in Kolhapur to collect the official admission form for Pre-Primary or Grades 1 to 7." },
   { step: "02", title: "Document Submission", desc: "Submit the filled form with Birth Certificate, Aadhaar Card, Transfer Certificate (if applicable), and 3 passport photos." },
-  { step: "03", title: "Parent & Student Interaction", desc: "A friendly orientation meeting with Head Teacher Sawant Jayshree Tanaji and class teachers." },
+  { step: "03", title: "Parent & Student Interaction", desc: "A friendly orientation meeting with Principal Anuradha Rajaram Ayarekar and class teachers." },
   { step: "04", title: "Enrollment Confirmation", desc: "Receive the official admission confirmation and collect textbook and uniform guidelines for the April session." }
 ];
 
@@ -760,7 +805,7 @@ export const trusteesList = [
     role: "Secretary",
     trust: "Shri Dattabal Mission Divine, Kolhapur",
     image: "/images/trustee-3.jpg",
-    bio: "Supporting academic programs, community outreach, and cultural heritage initiatives of Shri Dattabal Vidyamandir since its inception."
+    bio: "Supporting academic programs, community outreach, and cultural heritage initiatives of Shri Dattabal High School since its inception."
   }
 ];
 
