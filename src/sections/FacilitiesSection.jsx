@@ -35,7 +35,7 @@ export default function FacilitiesSection({ setActivePage }) {
               Well-Equipped Modern Infrastructure
             </h2>
             <p className="text-sm text-slate-600 mt-1">
-              Private school premises with 19 instructional classrooms, 65 teaching staff, 15 non-teaching staff, 5-computer unit, and 22 clean toilets.
+              Private school premises with 50+ instructional classrooms, 65 teaching staff, 15 non-teaching staff, and 2-system computer learning unit.
             </p>
           </div>
 

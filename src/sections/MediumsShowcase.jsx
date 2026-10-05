@@ -33,9 +33,9 @@ export default function MediumsShowcase({
       id="mediums-showcase"
       className="py-20 lg:py-24 bg-gradient-to-b from-slate-50 via-white to-slate-50 border-b border-slate-200 relative overflow-hidden"
     >
-      {/* Background ambient accents */}
-      <div className="absolute top-10 left-1/2 -translate-x-1/2 w-3/4 h-64 bg-blue-100/40 rounded-full blur-3xl pointer-events-none -z-10" />
-      <div className="absolute bottom-0 right-0 w-80 h-80 bg-amber-100/30 rounded-full blur-3xl pointer-events-none -z-10" />
+      {/* Background ambient accents (desktop only to prevent mobile GPU blur overhead) */}
+      <div className="hidden sm:block absolute top-10 left-1/2 -translate-x-1/2 w-3/4 h-64 bg-blue-100/40 rounded-full blur-2xl lg:blur-3xl pointer-events-none -z-10" />
+      <div className="hidden sm:block absolute bottom-0 right-0 w-80 h-80 bg-amber-100/30 rounded-full blur-2xl lg:blur-3xl pointer-events-none -z-10" />
 
       <div className="max-w-7xl mx-auto px-4 md:px-6">
         {/* Section Header */}
@@ -50,7 +50,7 @@ export default function MediumsShowcase({
           </h2>
 
           <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
-            At Shri Dattabal High School, we understand that every child thrives in a tailored linguistic environment. We offer two dedicated streams under the Maharashtra State Board, both built on academic rigour and moral values.
+            At Shri Dattabal School, we understand that every child thrives in a tailored linguistic environment. We offer two dedicated streams under the Maharashtra State Board, both built on academic rigour and moral values.
           </p>
 
           {/* Interactive Stream Switcher Buttons */}

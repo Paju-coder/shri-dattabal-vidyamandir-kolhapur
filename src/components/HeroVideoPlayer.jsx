@@ -7,7 +7,7 @@ const VIDEO_PLAYLIST = [
   {
     src: '/videos/VID_20260915_071622_881_bsl.mp4',
     label: 'Campus Life · September 2026',
-    sub: 'Shri Dattabal High School, Kolhapur',
+    sub: 'Shri Dattabal School, Kolhapur',
   },
   // Add more videos here as they become available in public/videos:
   // { src: '/videos/VID_20260910_073358_262_bsl.mp4', label: 'School Events · 2026', sub: 'Annual Gathering' },

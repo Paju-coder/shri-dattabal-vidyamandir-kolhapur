@@ -25,7 +25,7 @@ export default function StudentLifeSection({ setActivePage }) {
             </h2>
 
             <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-              At <strong>SHRI DATTABAL HIGH SCHOOL</strong>, student life blends cultural heritage with physical vitality and artistic freedom. Guided by 65 teaching staff and 15 non-teaching support staff, every child blossoms with confidence.
+              At <strong>SHRI DATTABAL SCHOOL</strong>, student life blends cultural heritage with physical vitality and artistic freedom. Guided by 65 teaching staff and 15 non-teaching support staff, every child blossoms with confidence.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">

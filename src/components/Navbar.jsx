@@ -10,14 +10,18 @@ export default function Navbar({ activePage, setActivePage }) {
   const [searchQuery, setSearchQuery] = useState('');
 
   useEffect(() => {
+    let ticking = false;
     const handleScroll = () => {
-      if (window.scrollY > 30) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const scrolled = window.scrollY > 30;
+          setIsScrolled((prev) => (prev !== scrolled ? scrolled : prev));
+          ticking = false;
+        });
+        ticking = true;
       }
     };
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -35,7 +39,7 @@ export default function Navbar({ activePage, setActivePage }) {
       <nav
         className={`w-full transition-all duration-300 ${
           isScrolled
-            ? 'bg-[#04439c]/98 backdrop-blur-md shadow-xl py-2.5 sm:py-3 border-b border-blue-900/50'
+            ? 'bg-[#04439c] sm:bg-[#04439c]/98 sm:backdrop-blur-md shadow-xl py-2.5 sm:py-3 border-b border-blue-900/50'
             : 'bg-[#04439c] py-2.5 sm:py-3.5 border-b border-blue-800/40'
         }`}
       >
@@ -55,10 +59,10 @@ export default function Navbar({ activePage, setActivePage }) {
 
             <div className="min-w-0">
               <div className="text-white font-serif font-extrabold text-xs sm:text-sm md:text-base lg:text-lg tracking-wide leading-tight group-hover:text-amber-200 transition-colors truncate">
-                SHRI DATTABAL HIGH SCHOOL
+                SHRI DATTABAL SCHOOL
               </div>
-              <div className="text-[#a8d4ff] font-sans font-semibold text-[9px] sm:text-[10px] md:text-xs tracking-wider uppercase truncate">
-                English & Semi-English Medium • Kolhapur (Est. 1989)
+              <div className="text-[#a8d4ff] font-sans text-[9px] sm:text-[10px] md:text-xs tracking-wider uppercase truncate">
+                <span className="font-extrabold text-white">English</span> & <span className="font-extrabold text-white">Semi-English</span> Medium • Estd. 1989
               </div>
             </div>
           </button>
@@ -147,7 +151,7 @@ export default function Navbar({ activePage, setActivePage }) {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="xl:hidden bg-[#00173b]/98 backdrop-blur-xl text-white border-b border-blue-800 shadow-2xl overflow-y-auto max-h-[calc(100vh-100px)]"
+            className="xl:hidden bg-[#00173b] sm:bg-[#00173b]/98 sm:backdrop-blur-xl text-white border-b border-blue-800 shadow-2xl overflow-y-auto max-h-[calc(100vh-100px)]"
           >
             <div className="px-5 py-5 space-y-4">
               {/* Quick Mobile Action Links */}

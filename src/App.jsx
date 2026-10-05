@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, lazy, Suspense } from 'react';
 import Lenis from 'lenis';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/react';
@@ -8,22 +8,36 @@ import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
 
 import HomePage from './pages/HomePage';
-import AboutPage from './pages/AboutPage';
-import AcademicsPage from './pages/AcademicsPage';
-import AdmissionsPage from './pages/AdmissionsPage';
-import FacultyPage from './pages/FacultyPage';
-import FacilitiesPage from './pages/FacilitiesPage';
-import StudentLifePage from './pages/StudentLifePage';
-import EventsPage from './pages/EventsPage';
-import GalleryPage from './pages/GalleryPage';
-import NoticesPage from './pages/NoticesPage';
-import ContactPage from './pages/ContactPage';
+
+// Lazy-load subpages to keep initial bundle ultra-fast on mobile
+const AboutPage = lazy(() => import('./pages/AboutPage'));
+const AcademicsPage = lazy(() => import('./pages/AcademicsPage'));
+const AdmissionsPage = lazy(() => import('./pages/AdmissionsPage'));
+const FacultyPage = lazy(() => import('./pages/FacultyPage'));
+const FacilitiesPage = lazy(() => import('./pages/FacilitiesPage'));
+const StudentLifePage = lazy(() => import('./pages/StudentLifePage'));
+const EventsPage = lazy(() => import('./pages/EventsPage'));
+const GalleryPage = lazy(() => import('./pages/GalleryPage'));
+const NoticesPage = lazy(() => import('./pages/NoticesPage'));
+const ContactPage = lazy(() => import('./pages/ContactPage'));
 
 export default function App() {
   const [activePage, setActivePage] = useState('home');
 
-  // Global Lenis Smooth Scroll Setup
+  // Global Lenis Smooth Scroll Setup — strictly desktop-only
+  // Mobile browsers already have native 120Hz/60Hz GPU-accelerated touch momentum scrolling
   useEffect(() => {
+    const isTouchOrMobile =
+      typeof window !== 'undefined' &&
+      ('ontouchstart' in window ||
+        navigator.maxTouchPoints > 0 ||
+        window.matchMedia('(pointer: coarse)').matches ||
+        window.innerWidth < 1024);
+
+    if (isTouchOrMobile) {
+      return; // Do NOT hijack scroll or run rAF loop on mobile devices
+    }
+
     const lenis = new Lenis({
       duration: 1.2,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
@@ -46,16 +60,16 @@ export default function App() {
   const renderPage = () => {
     switch (activePage) {
       case 'home': return <HomePage setActivePage={setActivePage} />;
-      case 'about': return <AboutPage setActivePage={setActivePage} />;
-      case 'academics': return <AcademicsPage setActivePage={setActivePage} />;
-      case 'admissions': return <AdmissionsPage setActivePage={setActivePage} />;
-      case 'faculty': return <FacultyPage setActivePage={setActivePage} />;
-      case 'facilities': return <FacilitiesPage setActivePage={setActivePage} />;
-      case 'student-life': return <StudentLifePage setActivePage={setActivePage} />;
-      case 'events': return <EventsPage setActivePage={setActivePage} />;
-      case 'gallery': return <GalleryPage setActivePage={setActivePage} />;
-      case 'notices': return <NoticesPage setActivePage={setActivePage} />;
-      case 'contact': return <ContactPage />;
+      case 'about': return <Suspense fallback={<div className="min-h-[50vh]" />}><AboutPage setActivePage={setActivePage} /></Suspense>;
+      case 'academics': return <Suspense fallback={<div className="min-h-[50vh]" />}><AcademicsPage setActivePage={setActivePage} /></Suspense>;
+      case 'admissions': return <Suspense fallback={<div className="min-h-[50vh]" />}><AdmissionsPage setActivePage={setActivePage} /></Suspense>;
+      case 'faculty': return <Suspense fallback={<div className="min-h-[50vh]" />}><FacultyPage setActivePage={setActivePage} /></Suspense>;
+      case 'facilities': return <Suspense fallback={<div className="min-h-[50vh]" />}><FacilitiesPage setActivePage={setActivePage} /></Suspense>;
+      case 'student-life': return <Suspense fallback={<div className="min-h-[50vh]" />}><StudentLifePage setActivePage={setActivePage} /></Suspense>;
+      case 'events': return <Suspense fallback={<div className="min-h-[50vh]" />}><EventsPage setActivePage={setActivePage} /></Suspense>;
+      case 'gallery': return <Suspense fallback={<div className="min-h-[50vh]" />}><GalleryPage setActivePage={setActivePage} /></Suspense>;
+      case 'notices': return <Suspense fallback={<div className="min-h-[50vh]" />}><NoticesPage setActivePage={setActivePage} /></Suspense>;
+      case 'contact': return <Suspense fallback={<div className="min-h-[50vh]" />}><ContactPage /></Suspense>;
       default: return <HomePage setActivePage={setActivePage} />;
     }
   };

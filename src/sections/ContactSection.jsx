@@ -72,7 +72,7 @@ export default function ContactSection() {
           payload.append("medium", formData.gradeLevel);
           payload.append("message", formData.message);
           payload.append("subject", `New Admission Inquiry: ${formData.name} (${formData.gradeLevel})`);
-          payload.append("from_name", "Shri Dattabal High School Kolhapur");
+          payload.append("from_name", "Shri Dattabal School Kolhapur");
 
           const response = await fetch("https://api.web3forms.com/submit", {
             method: "POST",
@@ -139,7 +139,7 @@ export default function ContactSection() {
             GET IN TOUCH
           </span>
           <h2 className="text-2xl sm:text-4xl font-serif font-bold text-slate-900">
-            Contact Shri Dattabal High School
+            Contact Shri Dattabal School
           </h2>
           <p className="text-xs sm:text-base text-slate-600">
             We welcome parents and prospective students to connect with Principal Anuradha Rajaram Ayarekar and our administrative office in Kolhapur.
@@ -206,7 +206,7 @@ export default function ContactSection() {
             <div className="pt-2 space-y-2">
               <div className="rounded-2xl overflow-hidden border border-slate-200 shadow-inner">
                 <iframe
-                  title="Shri Dattabal High School Kolhapur Map"
+                  title="Shri Dattabal School Kolhapur Map"
                   src={schoolDetails.mapEmbedUrl}
                   width="100%"
                   height="190"

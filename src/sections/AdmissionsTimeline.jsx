@@ -145,7 +145,7 @@ export default function AdmissionsTimeline({
             {isEnglish ? (
               /* English Medium Admission Pathway */
               <div className="bg-white p-6 sm:p-10 rounded-3xl border-2 border-blue-500/40 shadow-lg hover:shadow-xl transition-all relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-72 h-72 bg-blue-100/50 rounded-full blur-3xl pointer-events-none -mr-20 -mt-20" />
+                <div className="hidden sm:block absolute top-0 right-0 w-72 h-72 bg-blue-100/50 rounded-full blur-2xl lg:blur-3xl pointer-events-none -mr-20 -mt-20" />
                 
                 <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
                   <div className="flex flex-wrap items-center gap-2">
@@ -203,7 +203,7 @@ export default function AdmissionsTimeline({
             ) : (
               /* Semi-English Medium Admission Pathway */
               <div className="bg-white p-6 sm:p-10 rounded-3xl border-2 border-teal-500/40 shadow-lg hover:shadow-xl transition-all relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-72 h-72 bg-teal-100/50 rounded-full blur-3xl pointer-events-none -mr-20 -mt-20" />
+                <div className="hidden sm:block absolute top-0 right-0 w-72 h-72 bg-teal-100/50 rounded-full blur-2xl lg:blur-3xl pointer-events-none -mr-20 -mt-20" />
                 
                 <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
                   <div className="flex flex-wrap items-center gap-2">
@@ -315,7 +315,7 @@ export default function AdmissionsTimeline({
             </div>
           </div>
 
-          <div className="lg:col-span-5 bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/20 text-center space-y-4">
+          <div className="lg:col-span-5 bg-slate-900/70 sm:bg-white/10 sm:backdrop-blur-md p-6 rounded-2xl border border-white/20 text-center space-y-4">
             <h4 className="font-bold text-white text-lg">Enquire for Admission</h4>
             <p className="text-xs text-slate-200">
               {isEnglish ? 'English Medium' : 'Semi-English Medium'} • Session commences in April. Office hours: 9:30 AM to 5:30 PM (Mon–Sat).

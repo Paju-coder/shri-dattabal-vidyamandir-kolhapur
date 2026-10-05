@@ -1,6 +1,6 @@
 import React from 'react';
 import { schoolDetails } from '../data/schoolData';
-import { Phone, Mail, MapPin, Clock, ArrowUp, Facebook, Instagram, Youtube } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, ArrowUp, Instagram } from 'lucide-react';
 
 export default function Footer({ setActivePage }) {
   const scrollToTop = () => {
@@ -28,10 +28,10 @@ export default function Footer({ setActivePage }) {
 
             <div>
               <div className="text-white font-serif font-extrabold text-sm sm:text-base leading-tight">
-                SHRI DATTABAL HIGH SCHOOL
+                SHRI DATTABAL SCHOOL
               </div>
-              <div className="text-[#a8d4ff] text-[10px] sm:text-[11px] font-semibold tracking-wider uppercase">
-                English & Semi-English Medium • Kolhapur (Est. 1989)
+              <div className="text-[#a8d4ff] text-[10px] sm:text-[11px] tracking-wider uppercase">
+                <span className="font-extrabold text-white">English</span> & <span className="font-extrabold text-white">Semi-English</span> Medium • Estd. 1989
               </div>
             </div>
           </div>
@@ -47,24 +47,6 @@ export default function Footer({ setActivePage }) {
               className="w-8 h-8 rounded-full bg-white/10 hover:bg-amber-500 hover:text-slate-950 flex items-center justify-center transition-colors text-slate-300"
             >
               <Instagram className="w-4 h-4" />
-            </a>
-            <a
-              href={schoolDetails.social.facebook}
-              target="_blank"
-              rel="noreferrer"
-              aria-label="Facebook"
-              className="w-8 h-8 rounded-full bg-white/10 hover:bg-amber-500 hover:text-slate-950 flex items-center justify-center transition-colors text-slate-300"
-            >
-              <Facebook className="w-4 h-4" />
-            </a>
-            <a
-              href={schoolDetails.social.youtube}
-              target="_blank"
-              rel="noreferrer"
-              aria-label="YouTube"
-              className="w-8 h-8 rounded-full bg-white/10 hover:bg-amber-500 hover:text-slate-950 flex items-center justify-center transition-colors text-slate-300"
-            >
-              <Youtube className="w-4 h-4" />
             </a>
           </div>
         </div>
@@ -105,11 +87,7 @@ export default function Footer({ setActivePage }) {
             </li>
             <li className="flex items-start gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-amber-400 mt-1.5 shrink-0" />
-              <span>19 Classrooms, 22 Toilets, 65 Teaching & 15 Non-Teaching Staff</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-amber-400 mt-1.5 shrink-0" />
-              <span>Principal: Anuradha Rajaram Ayarekar</span>
+              <span>50+ Classrooms, 65 Teaching & 15 Non-Teaching Staff</span>
             </li>
           </ul>
         </div>
@@ -144,12 +122,32 @@ export default function Footer({ setActivePage }) {
       </div>
 
       {/* Bottom Bar */}
-      <div className="max-w-7xl mx-auto px-4 md:px-6 pt-6 sm:pt-8 border-t border-blue-950/80 flex flex-col md:flex-row items-center justify-between text-xs text-slate-500 gap-3 sm:gap-4 text-center md:text-left">
-        <p>© 2026 SHRI DATTABAL HIGH SCHOOL, KOLHAPUR (Shri Dattabal Mission Divine). All rights reserved.</p>
+      <div className="max-w-7xl mx-auto px-4 md:px-6 pt-6 sm:pt-8 border-t border-blue-950/80 flex flex-col lg:flex-row items-center justify-between text-xs text-slate-400 gap-3 sm:gap-4 text-center lg:text-left">
+        <p>© 2026 SHRI DATTABAL SCHOOL, KOLHAPUR (Shri Dattabal Mission Divine). All rights reserved.</p>
+
+        <div className="flex items-center gap-1.5 text-xs text-slate-400">
+          <span>Designed & Developed by</span>
+          <a
+            href="https://growframe.netlify.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 ml-0.5 group transition-transform duration-200 hover:scale-105 cursor-pointer"
+          >
+            <img
+              src="/images/growframe-logo.png"
+              alt="GrowFrame"
+              className="h-4 sm:h-4.5 w-auto object-contain rounded-xs shadow-xs"
+            />
+            <span className="font-extrabold tracking-tight text-xs sm:text-sm">
+              <span className="text-white">Grow</span>
+              <span className="text-[#7fe82e]">Frame</span>
+            </span>
+          </a>
+        </div>
 
         <div className="flex items-center space-x-5 sm:space-x-6">
-          <button onClick={() => handleNav('contact')} className="hover:text-slate-300 transition-colors">Privacy Policy</button>
-          <button onClick={() => handleNav('contact')} className="hover:text-slate-300 transition-colors">Terms</button>
+          <button onClick={() => handleNav('contact')} className="hover:text-slate-300 transition-colors cursor-pointer">Privacy Policy</button>
+          <button onClick={() => handleNav('contact')} className="hover:text-slate-300 transition-colors cursor-pointer">Terms</button>
           <button
             onClick={scrollToTop}
             className="flex items-center gap-1 text-amber-400 hover:text-white transition-colors cursor-pointer font-semibold"

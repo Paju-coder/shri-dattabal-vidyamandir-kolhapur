@@ -10,7 +10,7 @@
 
 export const inquiryConfig = {
   // Paste your Web3Forms Access Key here or in .env
-  web3formsAccessKey: import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || "efa50f56-d682-4b78-8f58-b610e1b0d74a",
+  web3formsAccessKey: import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || "3360719c-5272-4b42-bfea-cccd64d1dd61",
 
   // Email where inquiries will be received
   recipientEmail: "sdmdkop@gmail.com",
@@ -19,5 +19,5 @@ export const inquiryConfig = {
   whatsappNumber: "918983626675",
 
   // Default subject line for inquiries
-  emailSubject: "New Admission Inquiry - Shri Dattabal High School"
+  emailSubject: "New Admission Inquiry - Shri Dattabal School"
 };

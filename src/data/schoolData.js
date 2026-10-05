@@ -1,5 +1,5 @@
 export const schoolDetails = {
-  name: "SHRI DATTABAL HIGH SCHOOL",
+  name: "SHRI DATTABAL SCHOOL",
   trustName: "Shri Dattabal Mission Divine Kolhapur",
   tagline: "Nurturing Wisdom, Values & Academic Excellence Since 1989",
   established: 1989,
@@ -119,8 +119,8 @@ export const quickInfoItems = [
   },
   {
     title: "Campus Facilities",
-    subtitle: "19 Classrooms & Playground",
-    description: "1,373-book library, 5-computer lab, and dedicated clean sanitation facilities.",
+    subtitle: "50+ Classrooms & Playground",
+    description: "1,373-book library, 2-system computer lab, and pure drinking water facilities.",
     actionText: "Explore Campus",
     actionLink: "facilities",
     badge: "Equipped"
@@ -142,8 +142,8 @@ export const schoolHighlights = [
   },
   {
     id: "infrastructure",
-    title: "19 Spacious Classrooms",
-    description: "Well-ventilated private building with 19 instructional classrooms in prime condition, 2 activity halls, and administrative room surrounded by a secure Pucca wall.",
+    title: "50+ Spacious Classrooms",
+    description: "Well-ventilated private building with 50+ instructional classrooms in prime condition, 2 activity halls, and administrative room surrounded by a secure Pucca wall.",
     icon: "Building2"
   },
   {
@@ -154,14 +154,14 @@ export const schoolHighlights = [
   },
   {
     id: "hygiene",
-    title: "Hygienic Sanitation & Clean Water",
-    description: "22 functional modern toilets (12 for Boys, 10 for Girls), filtered tap drinking water, and hygienic campus environment.",
+    title: "Pure Drinking Water & Clean Campus",
+    description: "Filtered tap drinking water, daily campus upkeep, and hygienic student-friendly environment.",
     icon: "ShieldCheck"
   },
   {
     id: "digital",
     title: "Digital Learning & Sports Ground",
-    description: "5 functional computer learning systems, large open playground for physical training drills, Lezim, running, and cultural stage gatherings.",
+    description: "2 functional computer learning systems, large open playground for physical training drills, Lezim, running, and cultural stage gatherings.",
     icon: "HeartHandshake"
   }
 ];
@@ -215,8 +215,8 @@ export const whyChoosePoints = [
   },
   {
     number: "03",
-    title: "Exceptional 19-Classroom Infrastructure",
-    text: "Spacious private building with 19 well-kept instructional classrooms, secure Pucca boundary wall, electricity, and clean tap water."
+    title: "Exceptional 50+ Classroom Infrastructure",
+    text: "Spacious private building with 50+ well-kept instructional classrooms, secure Pucca boundary wall, electricity, and clean tap water."
   },
   {
     number: "04",
@@ -225,8 +225,8 @@ export const whyChoosePoints = [
   },
   {
     number: "05",
-    title: "Outstanding Sanitation & Cleanliness",
-    text: "22 clean functional toilets (12 for boys, 10 for girls) with functional running tap water ensuring high hygiene and health standards."
+    title: "Clean Campus & Pure Drinking Water",
+    text: "Filtered running drinking water and dedicated campus cleanliness ensuring high hygiene and health standards."
   },
   {
     number: "06",
@@ -238,9 +238,9 @@ export const whyChoosePoints = [
 export const facilitiesList = [
   {
     id: "classrooms",
-    title: "19 Spacious Instructional Classrooms",
+    title: "50+ Spacious Instructional Classrooms",
     category: "Academic Infrastructure",
-    description: "19 well-lit, ventilated classrooms in excellent condition, equipped with green boards, comfortable benches, and educational charts.",
+    description: "50+ well-lit, ventilated classrooms in excellent condition, equipped with green boards, comfortable benches, and educational charts.",
     image: null
   },
   {
@@ -252,7 +252,7 @@ export const facilitiesList = [
   },
   {
     id: "computers",
-    title: "5-System Computer Learning Unit",
+    title: "2-System Computer Learning Unit",
     category: "Digital Education",
     description: "Dedicated computers for students to learn basic computing, digital typing, educational applications, Paint, and software tools.",
     image: null
@@ -284,7 +284,7 @@ export const instagramReelsList = [
     isLocal: true,
     type: "video",
     date: "Campus Video",
-    description: "Students gathering and activities on the school playground at Shri Dattabal High School Kolhapur.",
+    description: "Students gathering and activities on the school playground at Shri Dattabal School Kolhapur.",
     thumbnail: null
   },
   {
@@ -430,7 +430,7 @@ export const instagramReelsList = [
     type: "reel",
     date: "Annual Cultural Fest",
     description: "Vibrant traditional dance performances, folk arts, and student drama showcases by our students during the Annual Gathering.",
-    thumbnail: null
+    thumbnail: "/images/events/annual-gathering.jpg"
   },
   {
     id: "reel-2",
@@ -442,8 +442,8 @@ export const instagramReelsList = [
     shortCode: "DbSWeFik-NI",
     type: "post",
     date: "School Highlights",
-    description: "Felicitation of meritorious students, creative project displays, and teacher-guided academic milestones at Shri Dattabal High School.",
-    thumbnail: null
+    description: "Felicitation of meritorious students, creative project displays, and teacher-guided academic milestones at Shri Dattabal School.",
+    thumbnail: "/images/events/prize-distribution.jpg"
   },
   {
     id: "reel-3",
@@ -456,7 +456,7 @@ export const instagramReelsList = [
     type: "reel",
     date: "Daily Routine",
     description: "Inspiring morning assembly with recitation, national anthem, news reading, and moral thought of the day.",
-    thumbnail: null
+    thumbnail: "/images/events/lamp-lighting-ceremony.jpg"
   },
   {
     id: "reel-4",
@@ -469,7 +469,7 @@ export const instagramReelsList = [
     type: "reel",
     date: "Sports Ground",
     description: "Energetic Lezim presentations, rhythmic drill exercises, and sports training on the school ground.",
-    thumbnail: null
+    thumbnail: "/images/events/sports-sprint.jpg"
   },
   {
     id: "reel-5",
@@ -482,7 +482,7 @@ export const instagramReelsList = [
     type: "reel",
     date: "Activity Day",
     description: "Hands-on model making, clay modeling, drawing, and active constructivist learning in primary classrooms.",
-    thumbnail: null
+    thumbnail: "/images/events/butterfly-craft.jpg"
   },
   {
     id: "reel-6",
@@ -495,7 +495,7 @@ export const instagramReelsList = [
     type: "reel",
     date: "Festival Celebration",
     description: "Celebration of Guru Purnima, Shiv Jayanti, national festivals, and moral values guided by Shri Dattabal Divine Mission Kolhapur.",
-    thumbnail: null
+    thumbnail: "/images/events/guru-purnima.jpg"
   },
   {
     id: "reel-7",
@@ -508,7 +508,7 @@ export const instagramReelsList = [
     type: "reel",
     date: "Special Events",
     description: "Inspiring elocution, poetry recitation, and student talent exhibitions encouraging confident public speaking.",
-    thumbnail: null
+    thumbnail: "/images/events/science-exhibition.jpg"
   }
 ];
 
@@ -586,7 +586,7 @@ export const noticesList = [
     category: "Admissions",
     urgent: true,
     summary: "Pre-Primary (Nursery/Kindergarten) and Standard 1st to 7th admissions are now open for the upcoming session starting in April.",
-    content: "Shri Dattabal High School Kolhapur announces admissions open for Pre-Primary and Classes 1st to 7th. Parents are invited to visit the school administrative office between 8:30 AM and 3:30 PM with the student's birth certificate, Aadhaar card, and passport-size photos.",
+    content: "Shri Dattabal School Kolhapur announces admissions open for Pre-Primary and Classes 1st to 7th. Parents are invited to visit the school administrative office between 8:30 AM and 3:30 PM with the student's birth certificate, Aadhaar card, and passport-size photos.",
     pdfUrl: "#"
   },
   {
@@ -623,10 +623,10 @@ export const noticesList = [
 
 export const achievementStats = [
   { value: 1989, suffix: "", label: "Year Established", sub: "35+ Years of Legacy" },
-  { value: 19, suffix: "", label: "Instructional Classrooms", sub: "Spacious & well-ventilated" },
+  { value: 50, suffix: "+", label: "Instructional Classrooms", sub: "Spacious & well-ventilated" },
   { value: 1373, suffix: "+", label: "Library Books", sub: "Literature & reference volumes" },
   { value: 14, suffix: "", label: "Dedicated Educators", sub: "Primary & Pre-primary staff" },
-  { value: 22, suffix: "", label: "Functional Clean Toilets", sub: "12 Boys + 10 Girls" },
+  { value: 2, suffix: "", label: "Computer Learning Units", sub: "Digital ICT systems" },
   { value: 100, suffix: "%", label: "Safe Pucca Campus", sub: "All-weather road access" }
 ];
 
@@ -724,27 +724,45 @@ export const galleryItems = [
   { id: 78, title: "Stage Performance & Costumed Drama", category: "Cultural", image: "/images/gallery/campus-activity-40.jpeg", description: "Dramatization of historical and moral stories by talented students." },
   { id: 79, title: "Parent-Teacher Community Gathering", category: "Events", image: "/images/gallery/campus-activity-41.jpeg", description: "Close collaborative partnership between parents, teachers, and school." },
   { id: 80, title: "Student March-Past & Flag Salute", category: "Events", image: "/images/gallery/campus-activity-42.jpeg", description: "Crisp marching formations commemorating national festival celebrations." },
-  { id: 81, title: "Grand Campus Life Celebration", category: "Campus", image: "/images/gallery/campus-activity-43.jpeg", description: "Cherished moments reflecting the joyful spirit of Shri Dattabal High School." }
+  { id: 81, title: "Grand Campus Life Celebration", category: "Campus", image: "/images/gallery/campus-activity-43.jpeg", description: "Cherished moments reflecting the joyful spirit of Shri Dattabal School." }
 ];
 
 export const facultyList = [
   {
     id: "fac-1",
     name: "ANURADHA RAJARAM AYAREKAR",
-    role: "Principal of English Medium",
-    department: "English Medium Administration",
+    role: "Principal (English Medium - Secondary)",
+    department: "English Medium Secondary Administration",
     degree: "",
     bio: "Guiding Shri Dattabal English Medium School with visionary leadership, academic discipline, and a deep dedication to student character building and academic excellence.",
     image: "/images/principal.jpg"
   },
   {
+    id: "fac-1-primary",
+    name: "Parinita S Saruddkar",
+    role: "Principal (English Medium - Primary 1st to 7th)",
+    department: "English Medium Primary Administration",
+    degree: "",
+    bio: "Dedicated to foundational literacy, active inquiry, and nurturing academic excellence for primary students from 1st to 7th standard.",
+    image: "/images/parinita-saruddkar.jpg"
+  },
+  {
     id: "fac-1b",
     name: "Mr. Sachin Baban Davang",
-    role: "Principal (Semi-English Medium)",
+    role: "Principal (Semi-English Medium: 8th to 10th)",
     department: "Semi-English Medium Administration",
     degree: "M.A., B.Ed.",
-    bio: "Steering the Semi-English Medium with a balanced focus on bilingual STEM readiness (Science & Math in English) and cultural values.",
+    bio: "Steering the Semi-English Medium secondary section (8th to 10th) with a balanced focus on bilingual STEM readiness (Science & Math in English) and cultural values.",
     image: "/images/sachin-davang.jpg"
+  },
+  {
+    id: "fac-1c",
+    name: "Miss. Rohini Kamlakant Shewale",
+    role: "Principal (Semi-English Medium: 1st to 7th)",
+    department: "Semi-English Medium Primary Administration",
+    degree: "",
+    bio: "Dedicated to laying a strong bilingual educational foundation and nurturing young minds in Semi-English from 1st to 7th standard.",
+    image: "/images/rohini-shewale.jpg"
   },
   {
     id: "fac-2",
@@ -805,7 +823,7 @@ export const trusteesList = [
     role: "Secretary",
     trust: "Shri Dattabal Mission Divine, Kolhapur",
     image: "/images/trustee-3.jpg",
-    bio: "Supporting academic programs, community outreach, and cultural heritage initiatives of Shri Dattabal High School since its inception."
+    bio: "Supporting academic programs, community outreach, and cultural heritage initiatives of Shri Dattabal School since its inception."
   }
 ];
 

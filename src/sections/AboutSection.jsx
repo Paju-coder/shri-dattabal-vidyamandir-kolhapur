@@ -3,15 +3,11 @@ import { motion, AnimatePresence } from 'motion/react';
 import { Award, User, ShieldCheck } from 'lucide-react';
 import { trusteesList } from '../data/schoolData';
 
-function TrusteeCard({ trustee, idx }) {
+function TrusteeCard({ trustee }) {
   const [hasError, setHasError] = useState(false);
 
   return (
-    <motion.div
-      initial={{ opacity: 0, scale: 0.97 }}
-      whileInView={{ opacity: 1, scale: 1 }}
-      viewport={{ once: true }}
-      transition={{ delay: idx * 0.1, duration: 0.5 }}
+    <div
       className="relative rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 group h-full"
       style={{ minHeight: '520px' }}
     >
@@ -20,6 +16,8 @@ function TrusteeCard({ trustee, idx }) {
         <img
           src={trustee.image}
           alt={trustee.name}
+          loading="lazy"
+          decoding="async"
           onError={() => setHasError(true)}
           className="absolute inset-0 w-full h-full object-cover object-[center_20%] transition-transform duration-700 group-hover:scale-105"
         />
@@ -33,7 +31,7 @@ function TrusteeCard({ trustee, idx }) {
       <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
 
       {/* Logo stamp — top right */}
-      <div className="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/90 backdrop-blur-sm border border-white/60 p-1 shadow-lg">
+      <div className="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/90 sm:backdrop-blur-sm border border-white/60 p-1 shadow-lg">
         <img
           src="/images/dattabal_logo.png"
           alt="Shri Dattabal Mission Divine"
@@ -43,7 +41,7 @@ function TrusteeCard({ trustee, idx }) {
 
       {/* Info overlay — bottom */}
       <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-6">
-        <span className="inline-block px-2.5 py-0.5 rounded-md bg-[#04439c]/80 backdrop-blur-sm text-white text-[11px] font-bold uppercase tracking-wider mb-2">
+        <span className="inline-block px-2.5 py-0.5 rounded-md bg-[#04439c]/80 sm:backdrop-blur-sm text-white text-[11px] font-bold uppercase tracking-wider mb-2">
           {trustee.role}
         </span>
         <h3 className="font-serif font-bold text-xl sm:text-2xl text-white leading-tight drop-shadow-md">
@@ -60,7 +58,7 @@ function TrusteeCard({ trustee, idx }) {
           <span className="font-semibold text-white/80">Since 1989</span>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 }
 
@@ -68,12 +66,12 @@ export default function AboutSection({ setActivePage }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
 
-  // Auto Photo / Card Swap Animation (Fast 2s cycle)
+  // Auto Photo / Card Swap Animation (Gentle 5s cycle)
   useEffect(() => {
     if (isPaused || trusteesList.length === 0) return;
     const timer = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % trusteesList.length);
-    }, 2000);
+    }, 5000);
 
     return () => clearInterval(timer);
   }, [isPaused]);
@@ -92,7 +90,7 @@ export default function AboutSection({ setActivePage }) {
             Board of Trustees
           </h2>
           <p className="text-xs sm:text-base text-slate-600 leading-relaxed">
-            Guiding <strong>Shri Dattabal High School</strong> under the divine patronage of <strong>Shri Dattabal Mission Divine, Kolhapur</strong>. Committed to providing character, scientific temperament, and affordable educational excellence since 1989.
+            Guiding <strong>Shri Dattabal School</strong> under the divine patronage of <strong>Shri Dattabal Mission Divine, Kolhapur</strong>. Committed to providing character, scientific temperament, and affordable educational excellence since 1989.
           </p>
         </div>
 

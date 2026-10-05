@@ -33,32 +33,32 @@ export default function GallerySection({ setActivePage, isFullPage = false }) {
             CAMPUS PHOTO GALLERY ({galleryItems.length} PHOTOS)
           </span>
           <h2 className="text-2xl sm:text-4xl font-serif font-bold text-slate-900">
-            Life at Shri Dattabal High School
+            Life at Shri Dattabal School
           </h2>
           <p className="text-xs sm:text-base text-slate-600">
-            Moments capturing our 19 classrooms, 1,373-book library, sports playground, assemblies, festivals, and cultural events in Kolhapur.
+            Moments capturing our 50+ classrooms, 1,373-book library, sports playground, assemblies, festivals, and cultural events in Kolhapur.
           </p>
         </div>
 
 
         {/* Responsive Grid */}
-        <motion.div layout className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-5">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-5">
           <AnimatePresence>
             {displayedItems.map((item) => (
               <motion.div
                 key={item.id}
-                layout
-                initial={{ opacity: 0, scale: 0.95 }}
+                initial={{ opacity: 0, scale: 0.96 }}
                 animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.95 }}
-                transition={{ duration: 0.25 }}
+                exit={{ opacity: 0, scale: 0.96 }}
+                transition={{ duration: 0.2 }}
                 onClick={() => setSelectedImage(item)}
                 className="group relative rounded-xl sm:rounded-2xl overflow-hidden shadow-xs hover:shadow-md border border-slate-200 bg-slate-900 h-36 sm:h-52 lg:h-60 cursor-pointer"
               >
                 <img
                   src={item.image || '/images/hero_campus.jpg'}
-                  alt={item.title || 'Shri Dattabal High School Gallery'}
+                  alt={item.title || 'Shri Dattabal School Gallery'}
                   loading="lazy"
+                  decoding="async"
                   onError={(e) => {
                     e.target.onerror = null;
                     e.target.src = '/images/hero_campus.jpg';
@@ -68,7 +68,7 @@ export default function GallerySection({ setActivePage, isFullPage = false }) {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between p-3" />
 
                 <div className="absolute bottom-2.5 left-2.5 right-2.5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-amber-300 bg-black/60 px-2 py-0.5 rounded backdrop-blur-xs inline-block mb-1">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-amber-300 bg-black/75 px-2 py-0.5 rounded inline-block mb-1">
                     {item.category}
                   </span>
                   <p className="text-white text-xs font-semibold line-clamp-1 drop-shadow-sm">
@@ -82,7 +82,7 @@ export default function GallerySection({ setActivePage, isFullPage = false }) {
               </motion.div>
             ))}
           </AnimatePresence>
-        </motion.div>
+        </div>
 
         {/* Action Controls & Show More */}
         {!isFullPage && filteredItems.length > initialLimit && (

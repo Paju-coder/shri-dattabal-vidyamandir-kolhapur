@@ -104,7 +104,7 @@ export default function LightboxModal({ item, items = [], onClose }) {
                 ) : (
                   <div className="w-full h-full flex flex-col items-center justify-center gap-3 text-slate-500">
                     <div className="w-20 h-20 rounded-full bg-slate-800 flex items-center justify-center text-3xl">🏫</div>
-                    <span className="text-sm font-medium">Shri Dattabal High School</span>
+                    <span className="text-sm font-medium">Shri Dattabal School</span>
                   </div>
                 )}
               </div>

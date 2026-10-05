@@ -20,17 +20,31 @@ function InstagramReelCard({ reel }) {
   const [isPlaying, setIsPlaying] = React.useState(false);
   const [isMuted, setIsMuted] = React.useState(true);
   const [progress, setProgress] = React.useState(0);
+  const [videoActive, setVideoActive] = React.useState(false);
 
   React.useEffect(() => {
     if (videoRef.current) {
       videoRef.current.pause();
       videoRef.current.currentTime = 0;
-      setIsPlaying(false);
-      setProgress(0);
     }
+    setIsPlaying(false);
+    setProgress(0);
+    setVideoActive(false);
   }, [reel.id]);
 
   const togglePlay = () => {
+    if (!videoActive) {
+      setVideoActive(true);
+      setTimeout(() => {
+        if (videoRef.current) {
+          videoRef.current
+            .play()
+            .then(() => setIsPlaying(true))
+            .catch(() => {});
+        }
+      }, 50);
+      return;
+    }
     if (!videoRef.current) return;
     if (videoRef.current.paused) {
       videoRef.current
@@ -72,18 +86,29 @@ function InstagramReelCard({ reel }) {
         onClick={togglePlay}
       >
         {reel.videoSrc ? (
-          <video
-            ref={videoRef}
-            src={`${reel.videoSrc}#t=0.001`}
-            poster={reel.thumbnail || undefined}
-            playsInline
-            loop
-            muted={isMuted}
-            preload="metadata"
-            onTimeUpdate={handleTimeUpdate}
-            onEnded={() => setIsPlaying(false)}
-            className="w-full h-full object-cover"
-          />
+          videoActive ? (
+            <video
+              ref={videoRef}
+              src={reel.videoSrc}
+              poster={reel.thumbnail || undefined}
+              playsInline
+              loop
+              muted={isMuted}
+              preload="auto"
+              autoPlay
+              onTimeUpdate={handleTimeUpdate}
+              onEnded={() => setIsPlaying(false)}
+              className="w-full h-full object-cover"
+            />
+          ) : (
+            <img
+              src={reel.thumbnail || '/images/hero_campus.jpg'}
+              alt={reel.title}
+              loading="lazy"
+              decoding="async"
+              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+          )
         ) : (
           <iframe
             src={reel.embedUrl}
@@ -97,15 +122,15 @@ function InstagramReelCard({ reel }) {
 
         {/* Category badge + mute */}
         <div className="absolute top-3 left-3 right-3 flex items-center justify-between pointer-events-none z-20">
-          <span className="px-2.5 py-1 rounded-full bg-black/50 backdrop-blur-sm text-[11px] font-bold text-amber-200 tracking-wide">
+          <span className="px-2.5 py-1 rounded-full bg-black/60 sm:backdrop-blur-sm text-[11px] font-bold text-amber-200 tracking-wide">
             {reel.category}
           </span>
 
-          {reel.videoSrc && (
+          {reel.videoSrc && videoActive && (
             <button
               type="button"
               onClick={toggleMute}
-              className="w-8 h-8 rounded-full bg-black/50 hover:bg-black/70 backdrop-blur-sm text-white flex items-center justify-center pointer-events-auto cursor-pointer transition-colors"
+              className="w-8 h-8 rounded-full bg-black/60 hover:bg-black/80 sm:backdrop-blur-sm text-white flex items-center justify-center pointer-events-auto cursor-pointer transition-colors"
               aria-label={isMuted ? 'Unmute' : 'Mute'}
             >
               {isMuted ? (
@@ -127,7 +152,7 @@ function InstagramReelCard({ reel }) {
         )}
 
         {/* Progress bar */}
-        {reel.videoSrc && (
+        {reel.videoSrc && videoActive && (
           <div
             className="absolute bottom-0 left-0 right-0 h-1 hover:h-2 bg-white/20 transition-all cursor-pointer z-20"
             onClick={handleSeek}
@@ -191,12 +216,24 @@ function InstagramReelCard({ reel }) {
 export default function VideosReelsSection({ setActivePage }) {
   const [startIndex, setStartIndex] = useState(0);
   const [direction, setDirection] = useState('right');
+  const [visibleCount, setVisibleCount] = useState(1);
 
   const reels = useMemo(() => {
     return instagramReelsList.filter((item) => !item.isLocal && (item.videoSrc || item.embedUrl));
   }, []);
 
   const total = reels.length;
+
+  useEffect(() => {
+    const updateCount = () => {
+      if (window.innerWidth >= 1024) setVisibleCount(3);
+      else if (window.innerWidth >= 768) setVisibleCount(2);
+      else setVisibleCount(1);
+    };
+    updateCount();
+    window.addEventListener('resize', updateCount);
+    return () => window.removeEventListener('resize', updateCount);
+  }, []);
 
   const handleNext = () => {
     setDirection('right');
@@ -219,12 +256,14 @@ export default function VideosReelsSection({ setActivePage }) {
 
   const visibleCards = useMemo(() => {
     if (total === 0) return [];
-    return [
-      { reel: reels[startIndex % total], index: startIndex % total },
-      { reel: reels[(startIndex + 1) % total], index: (startIndex + 1) % total },
-      { reel: reels[(startIndex + 2) % total], index: (startIndex + 2) % total },
-    ];
-  }, [reels, startIndex, total]);
+    const count = visibleCount;
+    const cards = [];
+    for (let i = 0; i < count; i++) {
+      const idx = (startIndex + i) % total;
+      cards.push({ reel: reels[idx], index: idx, colIdx: i });
+    }
+    return cards;
+  }, [reels, startIndex, total, visibleCount]);
 
   return (
     <section
@@ -246,7 +285,7 @@ export default function VideosReelsSection({ setActivePage }) {
             </h2>
 
             <p className="text-sm text-slate-600 leading-relaxed">
-              Experience the vibrant spirit of <strong>Shri Dattabal High School</strong> through our official Instagram video reels, cultural gatherings, and student achievements.
+              Experience the vibrant spirit of <strong>Shri Dattabal School</strong> through our official Instagram video reels, cultural gatherings, and student achievements.
             </p>
           </div>
 
@@ -279,14 +318,14 @@ export default function VideosReelsSection({ setActivePage }) {
         {/* Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <AnimatePresence mode="popLayout" initial={false}>
-            {visibleCards.map((item, colIdx) => (
+            {visibleCards.map((item) => (
               <motion.div
-                key={`${item.reel.id}-${colIdx}`}
-                initial={{ opacity: 0, y: 20 }}
+                key={`${item.reel.id}-${item.colIdx}`}
+                initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, scale: 0.95 }}
-                transition={{ duration: 0.3, delay: colIdx * 0.05 }}
-                className={colIdx === 2 ? 'hidden lg:block' : colIdx === 1 ? 'hidden md:block' : 'block'}
+                exit={{ opacity: 0, scale: 0.96 }}
+                transition={{ duration: 0.25 }}
+                className="w-full"
               >
                 <InstagramReelCard reel={item.reel} />
               </motion.div>

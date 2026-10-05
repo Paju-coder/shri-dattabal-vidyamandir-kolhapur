@@ -16,7 +16,7 @@ export default function WhyChooseUs() {
               Shaping Bright Futures in Kolhapur.
             </h2>
             <p className="text-blue-100/90 text-sm sm:text-base leading-relaxed">
-              For over 35 years since 1989, <strong>Shri Dattabal High School</strong> has stood as a beacon of values, cultural pride, strong educational fundamentals, and student development under Shri Dattabal Mission Divine Kolhapur.
+              For over 35 years since 1989, <strong>Shri Dattabal School</strong> has stood as a beacon of values, cultural pride, strong educational fundamentals, and student development under Shri Dattabal Mission Divine Kolhapur.
             </p>
 
             <div className="p-5 rounded-2xl bg-white/5 border border-white/10 space-y-2">
@@ -24,7 +24,7 @@ export default function WhyChooseUs() {
                 Private Aided Institution • Kolhapur
               </span>
               <p className="text-xs text-slate-300">
-                19 Instructional Classrooms • 65 Teaching & 15 Non-Teaching Staff • 5 Computers • 22 Modern Toilets • Full Electricity & Purified Tap Water.
+                50+ Instructional Classrooms • 65 Teaching & 15 Non-Teaching Staff • 2 Computer Units • Full Electricity & Purified Tap Water.
               </p>
             </div>
           </div>
